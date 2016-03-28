@@ -9,5 +9,5 @@
 #import <UIKit/UIColor.h>
 
 @interface UIColor (PBHex)
-+ (id)colorWithHexString:(NSString *)hex alpha:(CGFloat)a;
++ (instancetype)colorWithHexString:(NSString *)hex alpha:(CGFloat)a;
 @end

@@ -8,7 +8,7 @@
 #import "UIColor+PBHex.h"
 
 @implementation UIColor (PBHex)
-+ (id)colorWithHexString:(NSString *)hex alpha:(CGFloat)a {
++ (instancetype)colorWithHexString:(nonnull NSString *)hex alpha:(CGFloat)a {
     NSScanner *colorScanner = [NSScanner scannerWithString:hex];
     unsigned int color;
     if (![colorScanner scanHexInt:&color]) return nil;
