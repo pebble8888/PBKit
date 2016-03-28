@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A25C7C8D1CA9726900005438 /* PBLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C7C8C1CA9726900005438 /* PBLogger.swift */; };
 		A2890EFE1AFB90FF00FA02A6 /* NSString+PBUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = A2890EFC1AFB90FF00FA02A6 /* NSString+PBUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2890EFF1AFB90FF00FA02A6 /* NSString+PBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A2890EFD1AFB90FF00FA02A6 /* NSString+PBUtils.m */; };
 		A2A5E3E31AF65E2700EC44A2 /* PBKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A2A5E3E21AF65E2700EC44A2 /* PBKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -34,6 +35,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A25C7C8C1CA9726900005438 /* PBLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBLogger.swift; sourceTree = "<group>"; };
 		A2890EFC1AFB90FF00FA02A6 /* NSString+PBUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PBUtils.h"; sourceTree = "<group>"; };
 		A2890EFD1AFB90FF00FA02A6 /* NSString+PBUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PBUtils.m"; sourceTree = "<group>"; };
 		A2A5E3DD1AF65E2700EC44A2 /* PBKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PBKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -105,6 +107,7 @@
 				A2A5E4121AF65FB300EC44A2 /* NSString+PBBase64.m */,
 				A2890EFC1AFB90FF00FA02A6 /* NSString+PBUtils.h */,
 				A2890EFD1AFB90FF00FA02A6 /* NSString+PBUtils.m */,
+				A25C7C8C1CA9726900005438 /* PBLogger.swift */,
 				A2A5E3E01AF65E2700EC44A2 /* Supporting Files */,
 			);
 			path = PBKit;
@@ -197,6 +200,7 @@
 		A2A5E3D41AF65E2700EC44A2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = pebble8888;
 				TargetAttributes = {
@@ -251,6 +255,7 @@
 				A2A5E4141AF65FB300EC44A2 /* NSString+PBBase64.m in Sources */,
 				A2A5E40B1AF65EFF00EC44A2 /* PBDateTime.m in Sources */,
 				A2890EFF1AFB90FF00FA02A6 /* NSString+PBUtils.m in Sources */,
+				A25C7C8D1CA9726900005438 /* PBLogger.swift in Sources */,
 				A2A5E40D1AF65EFF00EC44A2 /* UIColor+PBHex.m in Sources */,
 				A2A5E4091AF65EFF00EC44A2 /* PBCookieStorage.m in Sources */,
 			);
@@ -367,6 +372,7 @@
 		A2A5E3F41AF65E2700EC44A2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -378,12 +384,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "pebble.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		A2A5E3F51AF65E2700EC44A2 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
