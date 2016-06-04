@@ -11,4 +11,5 @@
 - (id)initWithDateString:(NSString *)aDateString;
 - (id)initWithSimpleDateString:(NSString*)aSimpleDateString;
 @property (readonly) NSDate* date;
++ (NSDateFormatter *)formatter;
 @end

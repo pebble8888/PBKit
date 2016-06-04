@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
+#import "PBDateTime.h"
 
 @interface PBKitTests : XCTestCase
 
@@ -26,15 +27,13 @@
 }
 
 - (void)testExample {
-    // This is an example of a functional test case.
-    XCTAssert(YES, @"Pass");
-}
-
-- (void)testPerformanceExample {
-    // This is an example of a performance test case.
-    [self measureBlock:^{
-        // Put the code you want to measure the time of here.
-    }];
+    
+    NSString* str = [[PBDateTime formatter] stringFromDate:[NSDate date]];
+    NSLog(@"%@", str);
+    
+    PBDateTime* dt = [PBDateTime pbdatetimeWithDateString:@"2016-02-01T01:00:00.000+0900"];
+    NSLog(@"%@", dt.date);
+    XCTAssert(dt.date != nil);
 }
 
 @end

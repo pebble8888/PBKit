@@ -25,6 +25,9 @@
     return s_formatter;
 }
 
+/**
+ * "2016-02-01T01:00:00.000+09.00"
+ */
 + (NSDateFormatter *)formatter
 {
     static NSDateFormatter* s_formatter = nil;
@@ -33,7 +36,7 @@
         s_formatter = [[NSDateFormatter alloc] init];
         NSLocale* locale = [[NSLocale alloc] initWithLocaleIdentifier:@"en_US_POSIX"];
         [s_formatter setLocale:locale];
-        [s_formatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'.000Z'"];
+        [s_formatter setDateFormat:@"yyyy'-'MM'-'dd'T'HH':'mm':'ss'.000'Z"];
         [s_formatter setTimeZone:[NSTimeZone timeZoneForSecondsFromGMT:0]];
     });
     return s_formatter;
