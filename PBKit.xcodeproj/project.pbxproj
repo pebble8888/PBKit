@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A20795731D290F5E00149A2D /* PBAudioTool.h in Headers */ = {isa = PBXBuildFile; fileRef = A20795711D290F5E00149A2D /* PBAudioTool.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A20795741D290F5E00149A2D /* PBAudioTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A20795721D290F5E00149A2D /* PBAudioTool.m */; };
 		A25C7C8D1CA9726900005438 /* PBLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C7C8C1CA9726900005438 /* PBLogger.swift */; };
 		A2890EFE1AFB90FF00FA02A6 /* NSString+PBUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = A2890EFC1AFB90FF00FA02A6 /* NSString+PBUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2890EFF1AFB90FF00FA02A6 /* NSString+PBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A2890EFD1AFB90FF00FA02A6 /* NSString+PBUtils.m */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A20795711D290F5E00149A2D /* PBAudioTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBAudioTool.h; sourceTree = "<group>"; };
+		A20795721D290F5E00149A2D /* PBAudioTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBAudioTool.m; sourceTree = "<group>"; };
 		A25C7C8C1CA9726900005438 /* PBLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBLogger.swift; sourceTree = "<group>"; };
 		A2890EFC1AFB90FF00FA02A6 /* NSString+PBUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PBUtils.h"; sourceTree = "<group>"; };
 		A2890EFD1AFB90FF00FA02A6 /* NSString+PBUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PBUtils.m"; sourceTree = "<group>"; };
@@ -95,19 +99,21 @@
 		A2A5E3DF1AF65E2700EC44A2 /* PBKit */ = {
 			isa = PBXGroup;
 			children = (
-				A2A5E3E21AF65E2700EC44A2 /* PBKit.h */,
-				A2A5E4151AF661EB00EC44A2 /* PBLogger.h */,
-				A2A5E4021AF65EFF00EC44A2 /* PBCookieStorage.h */,
-				A2A5E4031AF65EFF00EC44A2 /* PBCookieStorage.m */,
-				A2A5E4041AF65EFF00EC44A2 /* PBDateTime.h */,
-				A2A5E4051AF65EFF00EC44A2 /* PBDateTime.m */,
-				A2A5E4061AF65EFF00EC44A2 /* UIColor+PBHex.h */,
-				A2A5E4071AF65EFF00EC44A2 /* UIColor+PBHex.m */,
 				A2A5E4111AF65FB300EC44A2 /* NSString+PBBase64.h */,
 				A2A5E4121AF65FB300EC44A2 /* NSString+PBBase64.m */,
 				A2890EFC1AFB90FF00FA02A6 /* NSString+PBUtils.h */,
 				A2890EFD1AFB90FF00FA02A6 /* NSString+PBUtils.m */,
+				A20795711D290F5E00149A2D /* PBAudioTool.h */,
+				A20795721D290F5E00149A2D /* PBAudioTool.m */,
+				A2A5E4021AF65EFF00EC44A2 /* PBCookieStorage.h */,
+				A2A5E4031AF65EFF00EC44A2 /* PBCookieStorage.m */,
+				A2A5E4041AF65EFF00EC44A2 /* PBDateTime.h */,
+				A2A5E4051AF65EFF00EC44A2 /* PBDateTime.m */,
+				A2A5E3E21AF65E2700EC44A2 /* PBKit.h */,
+				A2A5E4151AF661EB00EC44A2 /* PBLogger.h */,
 				A25C7C8C1CA9726900005438 /* PBLogger.swift */,
+				A2A5E4061AF65EFF00EC44A2 /* UIColor+PBHex.h */,
+				A2A5E4071AF65EFF00EC44A2 /* UIColor+PBHex.m */,
 				A2A5E3E01AF65E2700EC44A2 /* Supporting Files */,
 			);
 			path = PBKit;
@@ -150,6 +156,7 @@
 				A2A5E4131AF65FB300EC44A2 /* NSString+PBBase64.h in Headers */,
 				A2A5E40A1AF65EFF00EC44A2 /* PBDateTime.h in Headers */,
 				A2A5E4161AF661EB00EC44A2 /* PBLogger.h in Headers */,
+				A20795731D290F5E00149A2D /* PBAudioTool.h in Headers */,
 				A2890EFE1AFB90FF00FA02A6 /* NSString+PBUtils.h in Headers */,
 				A2A5E3E31AF65E2700EC44A2 /* PBKit.h in Headers */,
 			);
@@ -257,6 +264,7 @@
 				A2890EFF1AFB90FF00FA02A6 /* NSString+PBUtils.m in Sources */,
 				A25C7C8D1CA9726900005438 /* PBLogger.swift in Sources */,
 				A2A5E40D1AF65EFF00EC44A2 /* UIColor+PBHex.m in Sources */,
+				A20795741D290F5E00149A2D /* PBAudioTool.m in Sources */,
 				A2A5E4091AF65EFF00EC44A2 /* PBCookieStorage.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
