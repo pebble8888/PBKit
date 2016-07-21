@@ -19,7 +19,7 @@ extension PBEnumCountable where Self : RawRepresentable, Self.RawValue == Int
     {
         var count = 0
         while let _ = Self(rawValue: count) {
-            ++count
+            count += 1
         }
         return count
     }
