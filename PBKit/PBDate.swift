@@ -8,38 +8,22 @@
 
 import Foundation
 
-extension NSDate {
+extension Date {
     var year:Int {
         get {
-            let calendar = NSCalendar.currentCalendar()
-            let comp : NSDateComponents = calendar.components(
-                NSCalendarUnit.Year, fromDate: self)
-            return comp.year
+            let calendar = Calendar.current
+            let comp : DateComponents = (calendar as NSCalendar).components(
+                NSCalendar.Unit.year, from: self)
+            return comp.year!
         }
     }
 
     var month:Int {
         get {
-            let calendar = NSCalendar.currentCalendar()
-            let comp : NSDateComponents = calendar.components(
-                NSCalendarUnit.Month, fromDate: self)
-            return comp.month
+            let calendar = Calendar.current
+            let comp : DateComponents = (calendar as NSCalendar).components(
+                NSCalendar.Unit.month, from: self)
+            return comp.month!
         }
     }
-}
-
-func > (lhs: NSDate, rhs: NSDate) -> Bool {
-    return lhs.timeIntervalSinceReferenceDate > rhs.timeIntervalSinceReferenceDate
-}
-
-func < (lhs: NSDate, rhs: NSDate) -> Bool {
-    return lhs.timeIntervalSinceReferenceDate < rhs.timeIntervalSinceReferenceDate
-}
-
-func >= (lhs: NSDate, rhs: NSDate) -> Bool {
-    return lhs.timeIntervalSinceReferenceDate >= rhs.timeIntervalSinceReferenceDate
-}
-
-func <= (lhs: NSDate, rhs: NSDate) -> Bool {
-    return lhs.timeIntervalSinceReferenceDate <= rhs.timeIntervalSinceReferenceDate
 }

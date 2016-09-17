@@ -8,6 +8,6 @@
 
 import Foundation
 
-public func DEBUG_LOG(logMessage: String, functionName: String = #function, line: Int = #line) {
+public func DEBUG_LOG(_ logMessage: String, functionName: String = #function, line: Int = #line) {
     NSLog("\(functionName) Line:[\(line)] \(logMessage)")
 }
