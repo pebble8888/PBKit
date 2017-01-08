@@ -30,12 +30,12 @@ extension DateFormatter {
 }
 
 extension Date {
-    init?(standardDateString:String){
+    public init?(standardDateString:String){
         guard let obj = DateFormatter.standard.date(from: standardDateString) else { return nil }
         self = obj
     }
     
-    init?(simpleDateString:String){
+    public init?(simpleDateString:String){
         guard let obj = DateFormatter.simple.date(from: simpleDateString) else { return nil }
         self = obj
     }

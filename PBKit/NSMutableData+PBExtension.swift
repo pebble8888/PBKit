@@ -7,16 +7,18 @@
 
 import Foundation
 
+/*
 enum PBMutableDataError: Error {
     case cannotConversion
 }
+ */
 
 extension NSMutableData {
-    func appendString(_ string: String) throws {
+    func appendString(_ string: String) {
         if let data = string.data(using: String.Encoding.utf8, allowLossyConversion: true) {
             append(data)
         } else {
-            throw PBMutableDataError.cannotConversion
+            print("appendString error!")
         }
     }
 }
