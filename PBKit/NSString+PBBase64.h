@@ -21,14 +21,12 @@
 #ifndef NSStringBase64_h
 #define NSStringBase64_h
 
-
 #import <Foundation/NSString.h>
 
 @interface NSString (NSStringBase64)
 
 + (NSString *)base64StringWithChar:(const unsigned char*)input length:(NSUInteger)length;
 + (NSString *)base64StringNoEqualWithChar:(const unsigned char *)input length:(NSUInteger)length;
-+ (NSString*)base64test;
 @end
 
 #endif

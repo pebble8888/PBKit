@@ -15,15 +15,12 @@ extension Array {
     }
 }
 
-
 public protocol ComparableIndex {
     static func LessIndex(_ lhs: Self, _ rhs: Self) -> Bool
 }
-
 
 extension Array where Element : ComparableIndex {
     mutating func sortWithIndex() {
         self.sort(by: { (a, b) in Element.LessIndex(a, b) })
     }
 }
-

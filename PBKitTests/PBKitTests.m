@@ -8,7 +8,6 @@
 
 #import <UIKit/UIKit.h>
 #import <XCTest/XCTest.h>
-#import "PBDateTime.h"
 
 @interface PBKitTests : XCTestCase
 
@@ -28,12 +27,6 @@
 
 - (void)testExample {
     
-    NSString* str = [[PBDateTime formatter] stringFromDate:[NSDate date]];
-    NSLog(@"%@", str);
-    
-    PBDateTime* dt = [PBDateTime pbdatetimeWithDateString:@"2016-02-01T01:00:00.000+0900"];
-    NSLog(@"%@", dt.date);
-    XCTAssert(dt.date != nil);
 }
 
 @end
