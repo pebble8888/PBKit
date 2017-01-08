@@ -418,6 +418,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A22F35B71E222F1B00DA8990 /* PBCookieStorage.swift in Sources */,
+				A22F35BC1E222F1B00DA8990 /* PBUIImage.swift in Sources */,
+				A22F35BD1E222F1B00DA8990 /* UIColor+PBHex.swift in Sources */,
+				A22F35BB1E222F1B00DA8990 /* PBPlatform.swift in Sources */,
 				A2A5E4141AF65FB300EC44A2 /* NSString+PBBase64.m in Sources */,
 				A22F35CF1E2230FF00DA8990 /* AudioStreamBasicDescription+PBExtension.swift in Sources */,
 				A2890EFF1AFB90FF00FA02A6 /* NSString+PBUtils.m in Sources */,

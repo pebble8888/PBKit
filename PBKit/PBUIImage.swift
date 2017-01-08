@@ -1,12 +1,12 @@
 //
 //  PBUIImage.swift
-//  onsenlife
 //
 //  Created by pebble8888 on 2016/11/20.
 //  Copyright © 2016年 pebble8888. All rights reserved.
 //
 
 import Foundation
+import UIKit
 
 //MARK:- Image Orientation fix
 extension UIImage {
