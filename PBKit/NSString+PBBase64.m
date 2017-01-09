@@ -11,16 +11,16 @@
 @implementation NSString (PBBase64)
 
 /**
- * @brief 文字列をbase64化する
+ * @brief convert string to base64
  */
 + (NSString *)base64StringWithChar:(const unsigned char*)input length:(NSUInteger)length
 {
     static char table[] = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-_=";
-    // サイズは決まっているので領域を先に取る
+    // allocate  
     NSMutableData *data = [NSMutableData dataWithLength:((length + 2) / 3) * 4];
-    // 領域の先頭ポインタを取得する
+    // get head pointer
     uint8_t *output = (uint8_t *)data.mutableBytes;
-    // 3バイト(24bit=6bit*3)ずつ処理する
+    // process by 3 bytes(24bit=6bit*3)
     for (NSInteger i = 0; i < length; i += 3) {
         NSInteger value = 0;
         for (NSInteger j = i; j < (i + 3); ++j) {
@@ -40,7 +40,7 @@
 }
 
 /**
- * @brief 末尾の=を削除する
+ * @brief remove = at end
  */
 + (NSString*)base64StringNoEqualWithChar:(const unsigned char *)input length:(NSUInteger)length
 {

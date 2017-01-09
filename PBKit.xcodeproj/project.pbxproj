@@ -29,6 +29,8 @@
 		A283EBA41E1FE72B00CE79A6 /* PBKit_macOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A283EBA31E1FE72B00CE79A6 /* PBKit_macOSTests.swift */; };
 		A283EBA61E1FE72B00CE79A6 /* PBKit_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = A283EB981E1FE72B00CE79A6 /* PBKit_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A283EBAD1E1FE7EE00CE79A6 /* PBLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25C7C8C1CA9726900005438 /* PBLogger.swift */; };
+		A2863C151E2361A400DFC58B /* NSString+PBBase64_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2863C141E2361A400DFC58B /* NSString+PBBase64_Tests.swift */; };
+		A2863C161E2361A400DFC58B /* NSString+PBBase64_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2863C141E2361A400DFC58B /* NSString+PBBase64_Tests.swift */; };
 		A2890EFE1AFB90FF00FA02A6 /* NSString+PBUtils.h in Headers */ = {isa = PBXBuildFile; fileRef = A2890EFC1AFB90FF00FA02A6 /* NSString+PBUtils.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2890EFF1AFB90FF00FA02A6 /* NSString+PBUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = A2890EFD1AFB90FF00FA02A6 /* NSString+PBUtils.m */; };
 		A2A5E3E31AF65E2700EC44A2 /* PBKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A2A5E3E21AF65E2700EC44A2 /* PBKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -77,6 +79,7 @@
 		A283EB9E1E1FE72B00CE79A6 /* PBKit_macOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PBKit_macOSTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A283EBA31E1FE72B00CE79A6 /* PBKit_macOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PBKit_macOSTests.swift; sourceTree = "<group>"; };
 		A283EBA51E1FE72B00CE79A6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2863C141E2361A400DFC58B /* NSString+PBBase64_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+PBBase64_Tests.swift"; sourceTree = "<group>"; };
 		A2890EFC1AFB90FF00FA02A6 /* NSString+PBUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+PBUtils.h"; sourceTree = "<group>"; };
 		A2890EFD1AFB90FF00FA02A6 /* NSString+PBUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+PBUtils.m"; sourceTree = "<group>"; };
 		A2A5E3DD1AF65E2700EC44A2 /* PBKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PBKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -206,6 +209,7 @@
 				A2A5E3ED1AF65E2700EC44A2 /* Supporting Files */,
 				A283EB8F1E1FE6A000CE79A6 /* PBLoggerTest.swift */,
 				A283EB8E1E1FE6A000CE79A6 /* PBKitTests-Bridging-Header.h */,
+				A2863C141E2361A400DFC58B /* NSString+PBBase64_Tests.swift */,
 			);
 			path = PBKitTests;
 			sourceTree = "<group>";
@@ -411,6 +415,7 @@
 			files = (
 				A22F35D61E2244F800DA8990 /* PBKitTests.swift in Sources */,
 				A283EBA41E1FE72B00CE79A6 /* PBKit_macOSTests.swift in Sources */,
+				A2863C161E2361A400DFC58B /* NSString+PBBase64_Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -444,6 +449,7 @@
 			files = (
 				A22F35D81E22454A00DA8990 /* Date+PBExtension.swift in Sources */,
 				A22F35D71E22454500DA8990 /* DateFormatter+PBExtension.swift in Sources */,
+				A2863C151E2361A400DFC58B /* NSString+PBBase64_Tests.swift in Sources */,
 				A2A5E3F01AF65E2700EC44A2 /* PBKitTests.m in Sources */,
 				A283EB901E1FE6A000CE79A6 /* PBLoggerTest.swift in Sources */,
 				A22F35D51E2244F800DA8990 /* PBKitTests.swift in Sources */,

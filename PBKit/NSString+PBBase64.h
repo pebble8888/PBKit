@@ -13,7 +13,7 @@
  *          RFC4648
  *
  *
- *  @note   RubyではBase64に以下のメソッドがあります。
+ * @note    RubyではBase64に以下のメソッドがあります。
  *          strict_decode64,  strict_encode64  : RFC 4648 改行なし
  *          urlsafe_decode64, urlsafe_encode64 : RFC 4648 改行なし +の代わりに-、 /の代わりに_
  */
