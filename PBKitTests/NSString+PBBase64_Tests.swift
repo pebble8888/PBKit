@@ -18,31 +18,26 @@ class NSString_PBBase64_Tests: XCTestCase {
         super.tearDown()
     }
     
-    func testExample1() {
-        let str = "あいう"
-        if let data:Data = str.data(using:.utf8) {
-            data.withUnsafeBytes {(bytes:UnsafePointer<UInt8>) -> Void in
-                let s:String = NSString.base64String(withChar: bytes, length: UInt(data.count)) as String
-                XCTAssertEqual(s, "44GC44GE44GG")
-            }
-        }
-    }
-    
-    func testExample2() {
-        let str = "ab?cd~"
-        if let data:Data = str.data(using:.utf8) {
-            data.withUnsafeBytes {(bytes:UnsafePointer<UInt8>) -> Void in
-                let s:String = NSString.base64String(withChar: bytes, length: UInt(data.count)) as String
-                XCTAssertEqual(s, "YWI_Y2R-")
-            }
-        }
-    }
-    
-    func testExample3() {
-        let a = "ab?cd~".base64UrlSafe()
-        XCTAssertEqual(a, "YWI_Y2R-")
+    func testPBExtension() {
+        let a1 = "ab?cd~".base64UrlSafe()
+        XCTAssertEqual(a1, "YWI_Y2R-")
         
-        let b = "あいう".base64UrlSafe()
-        XCTAssertEqual(b, "44GC44GE44GG")
+        let a2 = "ab?cd~e".base64UrlSafe()
+        XCTAssertEqual(a2, "YWI_Y2R-ZQ==")
+        
+        let a3 = "ab?cd~e".base64UrlSafeNoEqual()
+        XCTAssertEqual(a3, "YWI_Y2R-ZQ")
+        
+        let a4 = "あいう".base64UrlSafe()
+        XCTAssertEqual(a4, "44GC44GE44GG")
     }
+    
+    func testNative() {
+        let a1 = "ab?cd~".base64()
+        XCTAssertEqual(a1, "YWI/Y2R+")
+        
+        let a2 = "あいう".base64()
+        XCTAssertEqual(a2, "44GC44GE44GG")
+    }
+    
 }

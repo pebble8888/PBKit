@@ -14,6 +14,14 @@ extension String {
         return str.utf8.map { UInt8($0) } 
     }()
     
+    /**
+     * @note    URL safe base64
+     *          RFC4648 no LF 62th:+ 63th:/ =padding(4 multiple)
+     *
+     * @note    Base64 class in Ruby
+     *          strict_decode64,  strict_encode64  : RFC 4648 no LF 62th:+ 63th:/
+     *          urlsafe_decode64, urlsafe_encode64 : RFC 4648 no LF 62th:- 64th:_
+     */
     public func base64UrlSafe() -> String {
         let input = self.utf8
         let length = input.count
@@ -37,5 +45,17 @@ extension String {
             return ""
         }
         return ret_str
+    }
+    
+    public func base64() -> String {
+        return Data(self.utf8).base64EncodedString()
+    }
+
+    /**
+     * @brief remove = at end
+     */
+    public func base64UrlSafeNoEqual() -> String {
+        let str = self.base64UrlSafe()
+        return str.replacingOccurrences(of:"=", with:"")
     }
 }
