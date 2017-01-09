@@ -9,6 +9,7 @@
 
 @implementation NSString (PBUtils)
 // @以降を削除した文字列を返す
+// "foo@gmail.com" -> "foo"
 + (NSString*)stringByDeletingTrailingAtMark:(NSString *)aString
 {
     NSRange r_atmark = [aString rangeOfString:@"@"];
