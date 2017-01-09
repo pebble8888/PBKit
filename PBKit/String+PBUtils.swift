@@ -12,13 +12,8 @@ import Foundation
 extension String {
     public func deletedTrailingAtMark() -> String {
         guard let r_atmark:Range = self.range(of: "@") else {
-            // "@" not found
             return ""
         }
-        //NSRange r_atmark = [aString rangeOfString:@"@"];
-        //if( r_atmark.location == NSNotFound ) return nil;
         return self.substring(to: r_atmark.lowerBound)
-        //NSRange range = NSMakeRange(0, r_atmark.location);
-        //return [aString substringWithRange:range];
     }
 }
