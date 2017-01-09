@@ -38,5 +38,11 @@ class NSString_PBBase64_Tests: XCTestCase {
         }
     }
     
-    
+    func testExample3() {
+        let a = "ab?cd~".base64UrlSafe()
+        XCTAssertEqual(a, "YWI_Y2R-")
+        
+        let b = "あいう".base64UrlSafe()
+        XCTAssertEqual(b, "44GC44GE44GG")
+    }
 }

@@ -5,17 +5,14 @@
 //  Copyright (c) 2014 pebble. All rights reserved.
 //
 /**
- * @note    ここで実装しているbase64の仕様は、RFC4648です。
- *          62番目の文字:+
- *          63番目の文字:/
- *          =パティングあり(4の倍数)
- *          改行なし
+ * @note    URL safe base64
  *          RFC4648
+ *          no LF 62th:+ 63th:/
+ *          =padding(4 multiple)
  *
- *
- * @note    RubyではBase64に以下のメソッドがあります。
- *          strict_decode64,  strict_encode64  : RFC 4648 改行なし
- *          urlsafe_decode64, urlsafe_encode64 : RFC 4648 改行なし +の代わりに-、 /の代わりに_
+ * @note    Base64 class in Ruby
+ *          strict_decode64,  strict_encode64  : RFC 4648 no LF 62th:+ 63th:/
+ *          urlsafe_decode64, urlsafe_encode64 : RFC 4648 no LF 62th:- 64th:_
  */
  
 #ifndef NSStringBase64_h
