@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Array {
+public extension Array {
     mutating func swapElement(_ index1:Int, _ index2:Int){
         if index1 < self.count && index2 < self.count {
             swap(&self[index1], &self[index2])
@@ -19,7 +19,7 @@ public protocol ComparableIndex {
     static func LessIndex(_ lhs: Self, _ rhs: Self) -> Bool
 }
 
-extension Array where Element : ComparableIndex {
+public extension Array where Element : ComparableIndex {
     mutating func sortWithIndex() {
         self.sort(by: { (a, b) in Element.LessIndex(a, b) })
     }

@@ -7,12 +7,12 @@
 
 import Foundation
 
-protocol PBEnumCountable
+public protocol PBEnumCountable
 {
     static func countEnum() -> Int
 }
 
-extension PBEnumCountable where Self : RawRepresentable, Self.RawValue == Int
+public extension PBEnumCountable where Self : RawRepresentable, Self.RawValue == Int
 {
     static func countEnum() -> Int
     {

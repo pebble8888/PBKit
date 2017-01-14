@@ -7,7 +7,7 @@
 
 import Foundation
 
-extension Date {
+public extension Date {
     init(year:Int, month:Int, day:Int) {
         let calendar:Calendar = Calendar.current
         var components:DateComponents = DateComponents()

@@ -77,7 +77,6 @@ public enum PBResult {
         return !isSuccess
     }
     
-    
     public var value: Any? {
         switch self {
         case .success(let value): return value
@@ -89,6 +88,15 @@ public enum PBResult {
         switch self {
         case .success: return nil
         case .failure(let error): return error
+        }
+    }
+    
+    public func dematerialize() throws -> Any {
+        switch self {
+        case let .success(value):
+            return value
+        case let .failure(error):
+            throw error
         }
     }
 }
