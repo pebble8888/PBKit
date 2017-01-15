@@ -7,23 +7,23 @@
 
 import Foundation
 
-enum PBError: Error
-    ,CustomStringConvertible
-    ,CustomDebugStringConvertible
+public enum PBError: Error, CustomStringConvertible
 {
-    case general(Any, Error)
+    case general(error:Error, info:Any)
+    case httpResponseError(statusCode:Int, info:Any)
+    case nonHTTPURLResponse
+    case jsonParseError(info:Any)
     
-    var description:String {
+    public var description:String {
         switch self {
-        case .general(_, let error):
-            return "\(error)"
-        }
-    }
-    
-    var debugDescription: String {
-        switch self {
-        case .general(let value, let error):
-            return "\(error) \(value)"
+        case .general(let error, let info):
+            return "general \(error) \(info)"
+        case .httpResponseError(let statusCode, let info):
+            return "httpResponseError \(statusCode) \(info)"
+        case .nonHTTPURLResponse:
+            return "NoHTTPURLResponse"
+        case .jsonParseError(let info):
+            return "JSONParseError \(info)" 
         }
     }
 }
@@ -42,7 +42,7 @@ public enum PBResult {
         if let value = value {
             if let error = error {
                 // general error
-                self = .failure(PBError.general(value, error))
+                self = .failure(PBError.general(error:error, info:value))
             } else {
                 // success
                 self = .success(value) 
@@ -55,6 +55,25 @@ public enum PBResult {
                 // empty dictionary
                 self = .success([:])
             }
+        }
+    }
+    
+    public init(data:Data?, response:URLResponse?, error:Error?)
+    {
+        switch (data, response, error) {
+        case (_, _, let error?): // error unwrap
+            // error is non nil
+            self = .failure(error)
+        case (let data?, let httpResponse as HTTPURLResponse, _):
+            switch httpResponse.statusCode {
+            case 200 ..< 300:
+                let json:Any? = PBJSONParser.parser(data:data)
+                self = PBResult(json, error)
+            default:
+                self = .failure(PBError.httpResponseError(statusCode: httpResponse.statusCode, info:data))
+            }
+        default:
+            self = .failure(PBError.nonHTTPURLResponse)
         }
     }
     
@@ -98,5 +117,23 @@ public enum PBResult {
         case let .failure(error):
             throw error
         }
+    }
+    
+    public func evaluateForArray() throws -> Array<[String:Any]> {
+        // dematerialize() throw error if failure  
+        let value = try self.dematerialize()
+        guard let ary = value as? Array<[String:Any]> else {
+            throw PBError.jsonParseError(info:value)
+        }
+        return ary
+    }
+    
+    public func evaluateForDic() throws -> [String:Any] {
+        // dematerialize() throw error if failure  
+        let value = try self.dematerialize()
+        guard let dic = value as? [String:Any] else {
+            throw PBError.jsonParseError(info:value)
+        }
+        return dic
     }
 }
