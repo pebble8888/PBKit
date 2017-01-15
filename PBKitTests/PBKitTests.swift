@@ -7,7 +7,7 @@
 //
 
 import XCTest
-import PBKit
+import PBKit_macOS
 
 class PBKitTestsSwift: XCTestCase {
     

@@ -6,8 +6,9 @@
 //
 
 import Foundation
+#if os(iOS)
 import UIKit
-
+    
 public extension UIColor {
     convenience init(hexString:String, alpha:CGFloat) {
         let scanner = Scanner(string:hexString)
@@ -30,3 +31,4 @@ public extension UIColor {
         self.init(red:r, green:g, blue:b, alpha:a)
     }
 }
+#endif

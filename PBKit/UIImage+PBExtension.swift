@@ -6,6 +6,8 @@
 //
 
 import Foundation
+#if os(iOS)
+    
 import UIKit
 
 //MARK:- Image Orientation fix
@@ -78,3 +80,4 @@ extension UIImage {
         return resizedImage
     }
 }
+#endif
