@@ -27,7 +27,6 @@
 		A23755551E3349020070A827 /* Float+PBMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23755531E3349020070A827 /* Float+PBMath.swift */; };
 		A23755571E3349EB0070A827 /* Float+PBMathTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23755561E3349EB0070A827 /* Float+PBMathTest.swift */; };
 		A23755581E3349EB0070A827 /* Float+PBMathTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23755561E3349EB0070A827 /* Float+PBMathTest.swift */; };
-		A252A2BE1E36342C00D568E8 /* PBResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A252A2BC1E3633A300D568E8 /* PBResultTests.swift */; };
 		A25A8E8F1E29C51F005337C6 /* PBJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25A8E8D1E29C51F005337C6 /* PBJSONParser.swift */; };
 		A25A8E901E29C51F005337C6 /* PBResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25A8E8E1E29C51F005337C6 /* PBResult.swift */; };
 		A25A8E911E29C728005337C6 /* Array+PBExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22F35BE1E22303700DA8990 /* Array+PBExtension.swift */; };
@@ -51,7 +50,6 @@
 		A2863C151E2361A400DFC58B /* NSString+PBBase64_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2863C141E2361A400DFC58B /* NSString+PBBase64_Tests.swift */; };
 		A2863C161E2361A400DFC58B /* NSString+PBBase64_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2863C141E2361A400DFC58B /* NSString+PBBase64_Tests.swift */; };
 		A2A5E3E31AF65E2700EC44A2 /* PBKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A2A5E3E21AF65E2700EC44A2 /* PBKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A2A5E3E91AF65E2700EC44A2 /* PBKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A2A5E3DD1AF65E2700EC44A2 /* PBKit.framework */; };
 		A2A5E4161AF661EB00EC44A2 /* PBLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = A2A5E4151AF661EB00EC44A2 /* PBLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2AEB79B1E24A6CD0055FD56 /* PBUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEB79A1E24A6CD0055FD56 /* PBUtility.swift */; };
 		A2AEB79C1E24A6CD0055FD56 /* PBUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEB79A1E24A6CD0055FD56 /* PBUtility.swift */; };
@@ -61,6 +59,8 @@
 		A2BA4DD21E23AA23002BD691 /* NSString+PBUtils_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BA4DD01E23AA23002BD691 /* NSString+PBUtils_Tests.swift */; };
 		A2BA4DD41E23AA86002BD691 /* String+PBUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BA4DD31E23AA86002BD691 /* String+PBUtils.swift */; };
 		A2BA4DD51E23AA86002BD691 /* String+PBUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BA4DD31E23AA86002BD691 /* String+PBUtils.swift */; };
+		A2F8FF601E36387400DEF324 /* PBResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A252A2BC1E3633A300D568E8 /* PBResultTests.swift */; };
+		A2F8FF611E36387500DEF324 /* PBResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A252A2BC1E3633A300D568E8 /* PBResultTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -147,7 +147,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A2A5E3E91AF65E2700EC44A2 /* PBKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -450,7 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A252A2BE1E36342C00D568E8 /* PBResultTests.swift in Sources */,
+				A2F8FF601E36387400DEF324 /* PBResultTests.swift in Sources */,
 				A22F35D61E2244F800DA8990 /* PBKitTests.swift in Sources */,
 				A283EBA41E1FE72B00CE79A6 /* PBKit_macOSTests.swift in Sources */,
 				A2863C161E2361A400DFC58B /* NSString+PBBase64_Tests.swift in Sources */,
@@ -490,6 +489,7 @@
 			files = (
 				A2BA4DD11E23AA23002BD691 /* NSString+PBUtils_Tests.swift in Sources */,
 				A23755571E3349EB0070A827 /* Float+PBMathTest.swift in Sources */,
+				A2F8FF611E36387500DEF324 /* PBResultTests.swift in Sources */,
 				A22F35D81E22454A00DA8990 /* Date+PBExtension.swift in Sources */,
 				A22F35D71E22454500DA8990 /* DateFormatter+PBExtension.swift in Sources */,
 				A2863C151E2361A400DFC58B /* NSString+PBBase64_Tests.swift in Sources */,
