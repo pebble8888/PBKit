@@ -7,7 +7,10 @@
 //
 
 import XCTest
+#if os(iOS)
+#else
 import PBKit_macOS
+#endif
 
 class PBKitTestsSwift: XCTestCase {
     

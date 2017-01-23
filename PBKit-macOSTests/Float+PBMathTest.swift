@@ -7,7 +7,10 @@
 //
 
 import XCTest
-import PBKit_macOS 
+#if os(iOS)
+#else
+@testable import PBKit_macOS 
+#endif
 
 class Float_PBMathTest: XCTestCase {
     

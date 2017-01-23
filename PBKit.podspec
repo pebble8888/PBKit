@@ -13,6 +13,7 @@ Pod::Spec.new do |s|
   s.summary      = "Fundamental swift helper Library"
 
   s.description  = <<-DESC
+Fundamental swift helper Library
                    DESC
 
   s.homepage     = "https://github.com/pebble8888/PBKit.git"
@@ -35,7 +36,7 @@ Pod::Spec.new do |s|
   # s.platform     = :ios, "5.0"
 
   #  When using multiple platforms
-  # s.ios.deployment_target = "5.0"
+  s.ios.deployment_target = "8.0"
   # s.osx.deployment_target = "10.7"
   # s.watchos.deployment_target = "2.0"
   # s.tvos.deployment_target = "9.0"
@@ -58,7 +59,7 @@ Pod::Spec.new do |s|
   #  Not including the public_header_files will make all headers public.
   #
 
-  s.source_files  = "Classes", "Classes/**/*.{h,m,swift}"
+  s.source_files  = "Classes", "**/*.{h,m,swift}"
   s.exclude_files = "Classes/Exclude"
 
   # s.public_header_files = "Classes/**/*.h"
