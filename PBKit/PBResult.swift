@@ -12,7 +12,7 @@ public enum PBError: Error, CustomStringConvertible
     case general(error:Error, info:Any)
     case httpResponseError(statusCode:Int, info:Any)
     case nonHTTPURLResponse
-    case jsonParseError(info:Any)
+    case jsonParseError(reason:String, info:Any)
     
     public var description:String {
         switch self {
@@ -21,9 +21,9 @@ public enum PBError: Error, CustomStringConvertible
         case .httpResponseError(let statusCode, let info):
             return "httpResponseError \(statusCode) \(info)"
         case .nonHTTPURLResponse:
-            return "NoHTTPURLResponse"
-        case .jsonParseError(let info):
-            return "JSONParseError \(info)" 
+            return "nonHTTPURLResponse"
+        case .jsonParseError(let reason, let info):
+            return "jsonParseError \(reason)\(info)" 
         }
     }
 }
@@ -121,9 +121,13 @@ public enum PBResult {
     
     public func evaluateForArray() throws -> Array<[String:Any]> {
         // dematerialize() throw error if failure  
-        let value = try self.dematerialize()
+        let value:Any = try self.dematerialize()
         guard let ary = value as? Array<[String:Any]> else {
-            throw PBError.jsonParseError(info:value)
+            if let v = value as? String {
+                throw PBError.jsonParseError(reason: "is not array", info:v)
+            } else {
+                throw PBError.jsonParseError(reason: "is not array", info:value)
+            }
         }
         return ary
     }
@@ -132,7 +136,11 @@ public enum PBResult {
         // dematerialize() throw error if failure  
         let value = try self.dematerialize()
         guard let dic = value as? [String:Any] else {
-            throw PBError.jsonParseError(info:value)
+            if let v = value as? String {
+                throw PBError.jsonParseError(reason: "is not dictionary", info:v)
+            } else {
+                throw PBError.jsonParseError(reason: "is not dictionary", info:value)
+            }
         }
         return dic
     }
