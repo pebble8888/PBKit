@@ -132,7 +132,7 @@ public enum PBResult {
         return ary
     }
     
-    public func evaluateForDic() throws -> [String:Any] {
+    public func evaluateForDictionary() throws -> [String:Any] {
         // dematerialize() throw error if failure  
         let value = try self.dematerialize()
         guard let dic = value as? [String:Any] else {
