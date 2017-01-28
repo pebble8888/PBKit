@@ -8,6 +8,13 @@
 import Foundation
 
 public class PBJSONParser {
+    /**
+     @return JSON Foundation Object
+        - Top level object is an Array or Dictionary
+        - All objects are String, Number(Integer, FlotingPoint), Array, Dictionary, or Null
+        - All dictionary keys are Strings
+        - Numbers are not NaN or infinity
+     */
     static public func parser(data: Data?) -> Any? {
         guard let data = data, data.count > 0 else {
             return [:]
