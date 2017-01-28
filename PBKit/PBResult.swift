@@ -32,32 +32,6 @@ public enum PBResult {
     case success(Any)
     case failure(Error)
     
-    // value | error |
-    // -     | -     | error 
-    // -     | nil   | success
-    // nil   | -     | error 
-    // nil   | nil   | success [:]
-    public init(_ value:Any?, _ error:Error?)
-    {
-        if let value = value {
-            if let error = error {
-                // general error
-                self = .failure(PBError.general(error:error, info:value))
-            } else {
-                // success
-                self = .success(value) 
-            }
-        } else {  
-            if let error = error {
-                // error
-                self = .failure(error)
-            } else {
-                // empty dictionary
-                self = .success([:])
-            }
-        }
-    }
-    
     public init(data:Data?, response:URLResponse?, error:Error?)
     {
         switch (data, response, error) {
@@ -67,8 +41,12 @@ public enum PBResult {
         case (let data?, let httpResponse as HTTPURLResponse, _):
             switch httpResponse.statusCode {
             case 200 ..< 300:
-                let json:Any? = PBJSONParser.parser(data:data)
-                self = PBResult(json, error)
+                do {
+                    let json:Any = try PBJSONParser.parse(data:data)
+                    self = PBResult(value:json)
+                } catch {
+                    self = PBResult(error:error)
+                }
             default:
                 self = .failure(PBError.httpResponseError(statusCode: httpResponse.statusCode, info:data))
             }

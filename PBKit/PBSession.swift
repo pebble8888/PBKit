@@ -24,9 +24,10 @@ public struct PBSession {
         return request
     }
     
-    public func sendRequest(_ request: URLRequest, completion:@escaping (PBResult) -> Void) -> () {
+    public func sendRequest(_ request: NSMutableURLRequest, completion:@escaping (PBResult) -> Void) -> () {
         let session = URLSession.shared
-        let task = session.dataTask(with: request, completionHandler:
+        let req:URLRequest = request as URLRequest
+        let task = session.dataTask(with: req, completionHandler:
             { (data: Data?, response: URLResponse?, error: Error?) in
             let result:PBResult = PBResult(data:data, response:response, error:error)
             DispatchQueue.main.async(execute: { completion(result) } )
