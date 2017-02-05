@@ -35,7 +35,7 @@ public class PBJSONParser {
     /**
      @brief  JSON Foundation Object to data
      */
-    static public func build(jsonObject:Any) throws -> Data { 
+    static public func buildData(jsonObject:Any) throws -> Data { 
         guard JSONSerialization.isValidJSONObject(jsonObject) else {
             throw NSError(domain: NSCocoaErrorDomain, code: 3840, userInfo: nil)
         }
