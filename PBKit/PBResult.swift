@@ -13,6 +13,7 @@ public enum PBError: Error, CustomStringConvertible
     case httpResponseError(statusCode:Int, info:Any)
     case nonHTTPURLResponse
     case jsonParseError(reason:String, info:Any)
+    case invalidParams
     
     public var description:String {
         switch self {
@@ -24,6 +25,8 @@ public enum PBError: Error, CustomStringConvertible
             return "nonHTTPURLResponse"
         case .jsonParseError(let reason, let info):
             return "jsonParseError \(reason)\(info)" 
+        case .invalidParams:
+            return "invalidParams"
         }
     }
 }
