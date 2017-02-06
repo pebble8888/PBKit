@@ -42,4 +42,89 @@ public class PBJSONParser {
         return try JSONSerialization.data(withJSONObject: jsonObject)
     }
     
+    /**
+     @brief
+     */
+    static public func debugDescriptionJP(_ jsonObject:Any) -> String
+    {
+        guard let dic = jsonObject as? [String:Any] else {
+            return "is not jsonObject"
+        }
+        let ss:[String] = PBJSONParser.debugDescriptionJP(dic: dic, s:[])
+        var level:Int = 0
+        var sum = ""
+        for s in ss {
+            var done:Bool = false
+            var head:String?
+            var tail:String?
+            if s.utf8.count > 0 {
+                head = s.substring(to: s.index(s.startIndex, offsetBy:1))
+                tail = s.substring(from: s.index(s.endIndex, offsetBy:-1))
+                if head == "{" || head == "(" || tail == "{" || tail == "(" {
+                    sum += (PBJSONParser.tab(level:level) + s) + "\n"
+                    level += 1
+                    done = true
+                } else if head == "}" || head == ")" || tail == "}" || tail == ")" {
+                    level -= 1
+                    sum += (PBJSONParser.tab(level:level) + s) + "\n"
+                    done = true
+                }
+            }
+            if !done {
+                sum += (PBJSONParser.tab(level:level) + s) + "\n"
+            }
+        }
+        return sum
+    }
+    
+    private static func debugDescriptionJP(dic:[String:Any], s:[String]) -> [String]
+    {
+        var t = s
+        for (k, v) in dic {
+            if let a = v as? [String:Any] {
+                let b:[String] = debugDescriptionJP(dic: a, s: t)
+                t.append("{")
+                t.append("\(k) = {")
+                t.append(contentsOf: b)
+                t.append("};")
+                t.append("}")
+            }
+            else if let ary = v as? Array<[String:Any]> {
+                t.append("(")
+                for vd in ary {
+                    let b:[String] = debugDescriptionJP(dic: vd, s: t)
+                    t.append(contentsOf: b)
+                    t.append(";")
+                }
+                t.append(")")
+            }
+            else if let ary = v as? Array<String> {
+                t.append("{")
+                t.append("\(k) = (")
+                for vd in ary {
+                    t.append("\"\(vd)\",")
+                }
+                t.append(");")
+                t.append("}")
+            }
+            else if let v = v as? String {
+                t.append("\(k) = \"\(v)\";")
+            }
+            else {
+                t.append("\(k) = \(v);")
+            }
+        }
+        return t
+    }
+    
+    private static func tab(level:Int) -> String
+    {
+        assert(level >= 0)
+        var sum = ""
+        for _ in 0..<level {
+            sum += "    "
+        }
+        return sum
+    }
+    
 }

@@ -26,7 +26,7 @@ class PBResultTests: XCTestCase {
     
     func testSuccess() {
         let expectation = self.expectation(description: "")
-        let req:URLRequest = pbsession.buildRequest("posts/1")
+        let req = pbsession.buildRequest("posts/1", method:"GET")
         pbsession.sendRequest(req, completion: { (result:PBResult) -> Void in
             XCTAssert(result.isSuccess)
             print("\(result)")
@@ -36,7 +36,7 @@ class PBResultTests: XCTestCase {
     }
     func test404() {
         let expectation = self.expectation(description: "")
-        let req:URLRequest = pbsession.buildRequest("hoge")
+        let req = pbsession.buildRequest("hoge", method:"GET")
         pbsession.sendRequest(req, completion: { (result:PBResult) -> Void in
             if let pberror:PBError = result.error as? PBError {
                 switch pberror {

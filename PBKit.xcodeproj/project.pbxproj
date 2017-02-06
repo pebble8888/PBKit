@@ -27,6 +27,7 @@
 		A23755551E3349020070A827 /* Float+PBMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23755531E3349020070A827 /* Float+PBMath.swift */; };
 		A23755571E3349EB0070A827 /* Float+PBMathTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23755561E3349EB0070A827 /* Float+PBMathTest.swift */; };
 		A23755581E3349EB0070A827 /* Float+PBMathTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A23755561E3349EB0070A827 /* Float+PBMathTest.swift */; };
+		A254C6F41E485D3900F10CB5 /* PBJSONParserTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A254C6F31E485D3900F10CB5 /* PBJSONParserTest.swift */; };
 		A25A8E8F1E29C51F005337C6 /* PBJSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25A8E8D1E29C51F005337C6 /* PBJSONParser.swift */; };
 		A25A8E901E29C51F005337C6 /* PBResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = A25A8E8E1E29C51F005337C6 /* PBResult.swift */; };
 		A25A8E911E29C728005337C6 /* Array+PBExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22F35BE1E22303700DA8990 /* Array+PBExtension.swift */; };
@@ -95,6 +96,7 @@
 		A23755531E3349020070A827 /* Float+PBMath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float+PBMath.swift"; sourceTree = "<group>"; };
 		A23755561E3349EB0070A827 /* Float+PBMathTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Float+PBMathTest.swift"; sourceTree = "<group>"; };
 		A252A2BC1E3633A300D568E8 /* PBResultTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBResultTests.swift; sourceTree = "<group>"; };
+		A254C6F31E485D3900F10CB5 /* PBJSONParserTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBJSONParserTest.swift; sourceTree = "<group>"; };
 		A25A8E8D1E29C51F005337C6 /* PBJSONParser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBJSONParser.swift; sourceTree = "<group>"; };
 		A25A8E8E1E29C51F005337C6 /* PBResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBResult.swift; sourceTree = "<group>"; };
 		A25C7C8C1CA9726900005438 /* PBLogger.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBLogger.swift; sourceTree = "<group>"; };
@@ -228,6 +230,7 @@
 			isa = PBXGroup;
 			children = (
 				A22F35D41E2244F800DA8990 /* PBKitTests.swift */,
+				A254C6F31E485D3900F10CB5 /* PBJSONParserTest.swift */,
 				A2A5E3ED1AF65E2700EC44A2 /* Supporting Files */,
 				A283EB8F1E1FE6A000CE79A6 /* PBLoggerTest.swift */,
 				A283EB8E1E1FE6A000CE79A6 /* PBKitTests-Bridging-Header.h */,
@@ -347,7 +350,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0820;
-				LastUpgradeCheck = 0720;
+				LastUpgradeCheck = 0820;
 				ORGANIZATIONNAME = pebble8888;
 				TargetAttributes = {
 					A283EB951E1FE72B00CE79A6 = {
@@ -494,6 +497,7 @@
 				A22F35D71E22454500DA8990 /* DateFormatter+PBExtension.swift in Sources */,
 				A2863C151E2361A400DFC58B /* NSString+PBBase64_Tests.swift in Sources */,
 				A283EB901E1FE6A000CE79A6 /* PBLoggerTest.swift in Sources */,
+				A254C6F41E485D3900F10CB5 /* PBJSONParserTest.swift in Sources */,
 				A22F35D51E2244F800DA8990 /* PBKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -627,8 +631,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -675,8 +681,10 @@
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -696,6 +704,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VALIDATE_PRODUCT = YES;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -707,6 +716,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -727,6 +737,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
