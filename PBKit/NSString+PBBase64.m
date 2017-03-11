@@ -40,7 +40,7 @@
 }
 
 /**
- * @brief 末尾の=を削除する
+ * @brief 文字列をbase64化した後、末尾の=を削除する
  */
 + (NSString*)base64StringNoEqualWithChar:(const unsigned char *)input length:(NSUInteger)length
 {
