@@ -15,7 +15,7 @@ public class PBJSONParser {
         - All dictionary keys are Strings
         - Numbers are not NaN or infinity
      */
-    static public func parse(data: Data?) throws -> Any {
+    public static func parse(data: Data?) throws -> Any {
         guard let data = data, data.count > 0 else {
             return [:]
         }
@@ -35,7 +35,7 @@ public class PBJSONParser {
     /**
      @brief  JSON Foundation Object to data
      */
-    static public func buildData(jsonObject:Any) throws -> Data { 
+    public static func buildData(jsonObject:Any) throws -> Data { 
         guard JSONSerialization.isValidJSONObject(jsonObject) else {
             throw NSError(domain: NSCocoaErrorDomain, code: 3840, userInfo: nil)
         }
@@ -45,7 +45,7 @@ public class PBJSONParser {
     /**
      @brief
      */
-    static public func debugDescriptionJP(_ jsonObject:Any) -> String
+    public static func debugDescriptionJP(_ jsonObject:Any) -> String
     {
         guard let dic = jsonObject as? [String:Any] else {
             return "is not jsonObject"

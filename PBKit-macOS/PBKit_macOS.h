@@ -14,6 +14,4 @@ FOUNDATION_EXPORT double PBKit_macOSVersionNumber;
 //! Project version string for PBKit-macOS.
 FOUNDATION_EXPORT const unsigned char PBKit_macOSVersionString[];
 
-// In this header, you should import all the public headers of your framework using statements like #import <PBKit_macOS/PublicHeader.h>
-
-
+#import <PBKit_macOS/PBLogger.h>

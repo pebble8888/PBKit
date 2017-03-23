@@ -1,5 +1,5 @@
 //
-//  PBDateTime.swift
+//  DateFormatter+PBExtension.swift
 //
 //  Created by pebble8888 on 2017/01/08.
 //  Copyright © 2017年 pebble8888. All rights reserved.
@@ -9,7 +9,7 @@ import Foundation
 
 extension DateFormatter {
     /**
-     * "2016-02-01T01:00:00.000+09.00"
+     * "2016-02-01T01:00:00.000+0000"
      */
     public static let standard: DateFormatter = {
         let obj = DateFormatter()
@@ -26,6 +26,7 @@ extension DateFormatter {
         obj.timeZone = TimeZone(secondsFromGMT:0)
         return obj
     }()
+    
 }
 
 extension Date {
@@ -37,5 +38,9 @@ extension Date {
     public init?(simpleDateString:String){
         guard let obj = DateFormatter.simple.date(from: simpleDateString) else { return nil }
         self = obj
+    }
+    
+    public var standardRepresentation:String {
+        return DateFormatter.standard.string(from:self)
     }
 }

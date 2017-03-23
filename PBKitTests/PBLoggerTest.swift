@@ -7,7 +7,10 @@
 //
 
 import XCTest
-import PBKit
+#if os(iOS)
+#else
+@testable import PBKit_macOS
+#endif
 
 class PBLoggerTest: XCTestCase {
     
@@ -20,7 +23,7 @@ class PBLoggerTest: XCTestCase {
     }
     
     func testExample() {
+        debug_log("hoge1")
+        debug_log("fuga1")
     }
-    
-    
 }

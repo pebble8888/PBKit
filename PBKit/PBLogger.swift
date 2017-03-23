@@ -18,7 +18,9 @@ public func debug_log(_ logMessage: String, functionName: String = #function, li
         fm.createFile(atPath:path, contents: nil, attributes: nil)
     }
     if let fh = FileHandle(forWritingAtPath: path) {
-        if let data = logMessage.data(using: .utf8) {
+        let date = Date()
+        let s = "\(date.standardRepresentation) \(functionName) Line:\(line) \(logMessage)\n"
+        if let data = s.data(using: .utf8) {
             fh.seekToEndOfFile()
             fh.write(data)
             fh.synchronizeFile()

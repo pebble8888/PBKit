@@ -30,4 +30,8 @@ class PBKitTestsSwift: XCTestCase {
         NSLog("\(dt)");
     }
     
+    func testExample1() {
+        debug_log("hoge1")
+    }
+    
 }
