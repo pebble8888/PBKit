@@ -63,6 +63,8 @@
 		A2E48CEA1E83FBCE00117CC1 /* PBSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B80A781E2BAAEF0050B29B /* PBSession.swift */; };
 		A2F8FF601E36387400DEF324 /* PBResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A252A2BC1E3633A300D568E8 /* PBResultTests.swift */; };
 		A2F8FF611E36387500DEF324 /* PBResultTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A252A2BC1E3633A300D568E8 /* PBResultTests.swift */; };
+		CB0157EE1E913A12003EA730 /* PBLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0157ED1E913A12003EA730 /* PBLogger.m */; };
+		CB0157EF1E913A12003EA730 /* PBLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = CB0157ED1E913A12003EA730 /* PBLogger.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +122,7 @@
 		A2B80A781E2BAAEF0050B29B /* PBSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBSession.swift; sourceTree = "<group>"; };
 		A2BA4DD01E23AA23002BD691 /* NSString+PBUtils_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+PBUtils_Tests.swift"; sourceTree = "<group>"; };
 		A2BA4DD31E23AA86002BD691 /* String+PBUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+PBUtils.swift"; sourceTree = "<group>"; };
+		CB0157ED1E913A12003EA730 /* PBLogger.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PBLogger.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -210,6 +213,7 @@
 				A25A8E8D1E29C51F005337C6 /* PBJSONParser.swift */,
 				A2A5E3E21AF65E2700EC44A2 /* PBKit.h */,
 				A2A5E4151AF661EB00EC44A2 /* PBLogger.h */,
+				CB0157ED1E913A12003EA730 /* PBLogger.m */,
 				A25C7C8C1CA9726900005438 /* PBLogger.swift */,
 				A22F35C31E22303700DA8990 /* PBPlatform.swift */,
 				A25A8E8E1E29C51F005337C6 /* PBResult.swift */,
@@ -348,6 +352,7 @@
 				TargetAttributes = {
 					A283EB951E1FE72B00CE79A6 = {
 						CreatedOnToolsVersion = 8.2.1;
+						LastSwiftMigration = 0830;
 						ProvisioningStyle = Automatic;
 					};
 					A283EB9D1E1FE72B00CE79A6 = {
@@ -356,7 +361,7 @@
 					};
 					A2A5E3DC1AF65E2700EC44A2 = {
 						CreatedOnToolsVersion = 6.3.1;
-						LastSwiftMigration = 0820;
+						LastSwiftMigration = 0830;
 					};
 					A2A5E3E71AF65E2700EC44A2 = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -433,6 +438,7 @@
 				A25A8E9D1E29C728005337C6 /* UIImage+PBExtension.swift in Sources */,
 				A2BA4DD51E23AA86002BD691 /* String+PBUtils.swift in Sources */,
 				A22F35D31E22390500DA8990 /* DateFormatter+PBExtension.swift in Sources */,
+				CB0157EF1E913A12003EA730 /* PBLogger.m in Sources */,
 				A2AEB79C1E24A6CD0055FD56 /* PBUtility.swift in Sources */,
 				A22F35D01E2230FF00DA8990 /* AudioStreamBasicDescription+PBExtension.swift in Sources */,
 				A25ED5841E237463005C0F62 /* String+PBURLSafeBase64.swift in Sources */,
@@ -472,6 +478,7 @@
 				A2BA4DD41E23AA86002BD691 /* String+PBUtils.swift in Sources */,
 				A22F35CD1E22303700DA8990 /* UIColor+PBExtension.swift in Sources */,
 				A25A8E901E29C51F005337C6 /* PBResult.swift in Sources */,
+				CB0157EE1E913A12003EA730 /* PBLogger.m in Sources */,
 				A22F35CB1E22303700DA8990 /* PBPlatform.swift in Sources */,
 				A22F35C61E22303700DA8990 /* Array+PBExtension.swift in Sources */,
 				A25ED5831E237463005C0F62 /* String+PBURLSafeBase64.swift in Sources */,
@@ -514,6 +521,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -543,6 +551,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;

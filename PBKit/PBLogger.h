@@ -7,8 +7,16 @@
 
 #import <Foundation/Foundation.h>
 
+/*
 #if defined(DEBUG) || defined(_DEBUG)
+ */
   #define DEBUG_LOG(fmt,...) NSLog( @"%s [Line:%d] " fmt, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+  #define DEBUG_LOGF(fmt,...) Logf( @"%s [Line:%d] " fmt, __PRETTY_FUNCTION__, __LINE__, ##__VA_ARGS__);
+/*
 #else
   #define DEBUG_LOG(fmt,...)
+  #define DEBUG_LOGF(fmt,...)
 #endif
+ */
+
+void Logf(NSString* fmt, ...);
