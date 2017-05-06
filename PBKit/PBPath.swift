@@ -8,7 +8,12 @@
 
 import Foundation
 
-public func PBDocumentsPath() -> String
-{
-    return NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true).first
+struct PBPath {
+    static func resourcePath() -> String? {
+        return Bundle.main.resourcePath
+    }
+   
+    static func documentsPath() -> String? {
+        return NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true).first
+    }
 }
