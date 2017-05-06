@@ -49,6 +49,8 @@
 		A27D9C0B1EBDD3720068340F /* PBGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27D9C091EBDD3720068340F /* PBGeometry.swift */; };
 		A27D9C0D1EBDDC1E0068340F /* PBPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27D9C0C1EBDDC1E0068340F /* PBPath.swift */; };
 		A27D9C0E1EBDDC1E0068340F /* PBPath.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27D9C0C1EBDDC1E0068340F /* PBPath.swift */; };
+		A27D9C101EBDDCFC0068340F /* PBAssert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27D9C0F1EBDDCFC0068340F /* PBAssert.swift */; };
+		A27D9C111EBDDCFC0068340F /* PBAssert.swift in Sources */ = {isa = PBXBuildFile; fileRef = A27D9C0F1EBDDCFC0068340F /* PBAssert.swift */; };
 		A283EB901E1FE6A000CE79A6 /* PBLoggerTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A283EB8F1E1FE6A000CE79A6 /* PBLoggerTest.swift */; };
 		A283EB9F1E1FE72B00CE79A6 /* PBKit_macOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A283EB961E1FE72B00CE79A6 /* PBKit_macOS.framework */; };
 		A283EBA61E1FE72B00CE79A6 /* PBKit_macOS.h in Headers */ = {isa = PBXBuildFile; fileRef = A283EB981E1FE72B00CE79A6 /* PBKit_macOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -116,6 +118,7 @@
 		A269773C1E9868BC00365188 /* PBByteFormatterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBByteFormatterTests.swift; sourceTree = "<group>"; };
 		A27D9C091EBDD3720068340F /* PBGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBGeometry.swift; sourceTree = "<group>"; };
 		A27D9C0C1EBDDC1E0068340F /* PBPath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBPath.swift; sourceTree = "<group>"; };
+		A27D9C0F1EBDDCFC0068340F /* PBAssert.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBAssert.swift; sourceTree = "<group>"; };
 		A283EB8E1E1FE6A000CE79A6 /* PBKitTests-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PBKitTests-Bridging-Header.h"; sourceTree = "<group>"; };
 		A283EB8F1E1FE6A000CE79A6 /* PBLoggerTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBLoggerTest.swift; sourceTree = "<group>"; };
 		A283EB961E1FE72B00CE79A6 /* PBKit_macOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PBKit_macOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -239,6 +242,7 @@
 				A2BA4DD31E23AA86002BD691 /* String+PBUtils.swift */,
 				A22F35C51E22303700DA8990 /* UIColor+PBExtension.swift */,
 				A22F35C41E22303700DA8990 /* UIImage+PBExtension.swift */,
+				A27D9C0F1EBDDCFC0068340F /* PBAssert.swift */,
 			);
 			path = PBKit;
 			sourceTree = "<group>";
@@ -452,6 +456,7 @@
 				A25A8E991E29C728005337C6 /* PBPlatform.swift in Sources */,
 				A23755551E3349020070A827 /* Float+PBMath.swift in Sources */,
 				A25A8E9A1E29C728005337C6 /* PBResult.swift in Sources */,
+				A27D9C111EBDDCFC0068340F /* PBAssert.swift in Sources */,
 				A25A8E9C1E29C728005337C6 /* UIColor+PBExtension.swift in Sources */,
 				A25A8E9D1E29C728005337C6 /* UIImage+PBExtension.swift in Sources */,
 				A2BA4DD51E23AA86002BD691 /* String+PBUtils.swift in Sources */,
@@ -496,6 +501,7 @@
 				A2AEB79B1E24A6CD0055FD56 /* PBUtility.swift in Sources */,
 				A2B80A791E2BAAEF0050B29B /* PBSession.swift in Sources */,
 				A23755541E3349020070A827 /* Float+PBMath.swift in Sources */,
+				A27D9C101EBDDCFC0068340F /* PBAssert.swift in Sources */,
 				A22F35C71E22303700DA8990 /* PBCookieStorage.swift in Sources */,
 				A2BA4DD41E23AA86002BD691 /* String+PBUtils.swift in Sources */,
 				A22F35CD1E22303700DA8990 /* UIColor+PBExtension.swift in Sources */,

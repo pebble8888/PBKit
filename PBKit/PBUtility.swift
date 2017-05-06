@@ -9,14 +9,6 @@
 import Foundation
 import Accelerate
 
-func assertMainThread() {
-    assert(Thread.isMainThread)
-}
-
-func assertNotMainThread() {
-    assert(!Thread.isMainThread)
-}
-
 extension Int32
 {
     func hexDescription() -> String
@@ -25,14 +17,12 @@ extension Int32
     }
 }
 
-extension UnsafeMutablePointer
+extension UnsafeMutablePointer where Pointee == Float
 {
     func maxMagnitude(count:UInt) -> Float
     {
         var max:Float = 0
-        let p:UnsafeRawPointer = UnsafeRawPointer(self)
-        let q:UnsafePointer<Float> = p.assumingMemoryBound(to: Float.self)
-        vDSP_maxmgv(q, 1, &max, count)
+        vDSP_maxmgv(self, 1, &max, count)
         return max
     }
 }

@@ -98,5 +98,15 @@ class Float_PBMathTest: XCTestCase {
         XCTAssert(Double(10.0) != Double(10.1))
     }
     
-    
+   
+    func test1() {
+        let a = UnsafeMutablePointer<Float>.allocate(capacity: 4)
+        a[0] = 1
+        a[1] = 222
+        a[2] = 3
+        a[3] = 44
+        let val:Float = a.maxMagnitude(count: 4)
+        XCTAssertEqual(val, 222)
+        a.deallocate(capacity:4)
+    }
 }
