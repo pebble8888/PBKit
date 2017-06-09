@@ -59,8 +59,11 @@
 		A2863C161E2361A400DFC58B /* NSString+PBBase64_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2863C141E2361A400DFC58B /* NSString+PBBase64_Tests.swift */; };
 		A2A5E3E31AF65E2700EC44A2 /* PBKit.h in Headers */ = {isa = PBXBuildFile; fileRef = A2A5E3E21AF65E2700EC44A2 /* PBKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A2A5E4161AF661EB00EC44A2 /* PBLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = A2A5E4151AF661EB00EC44A2 /* PBLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A2AEB79B1E24A6CD0055FD56 /* PBUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEB79A1E24A6CD0055FD56 /* PBUtility.swift */; };
-		A2AEB79C1E24A6CD0055FD56 /* PBUtility.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEB79A1E24A6CD0055FD56 /* PBUtility.swift */; };
+		A2ABFB721EEB5EAD00BF4B34 /* PBHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ABFB711EEB5EAD00BF4B34 /* PBHex.swift */; };
+		A2ABFB731EEB5EAD00BF4B34 /* PBHex.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ABFB711EEB5EAD00BF4B34 /* PBHex.swift */; };
+		A2ABFB751EEB62A400BF4B34 /* PBHexTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2ABFB741EEB62A400BF4B34 /* PBHexTest.swift */; };
+		A2AEB79B1E24A6CD0055FD56 /* PBDSP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEB79A1E24A6CD0055FD56 /* PBDSP.swift */; };
+		A2AEB79C1E24A6CD0055FD56 /* PBDSP.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2AEB79A1E24A6CD0055FD56 /* PBDSP.swift */; };
 		A2B80A791E2BAAEF0050B29B /* PBSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2B80A781E2BAAEF0050B29B /* PBSession.swift */; };
 		A2BA4DD11E23AA23002BD691 /* NSString+PBUtils_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BA4DD01E23AA23002BD691 /* NSString+PBUtils_Tests.swift */; };
 		A2BA4DD21E23AA23002BD691 /* NSString+PBUtils_Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2BA4DD01E23AA23002BD691 /* NSString+PBUtils_Tests.swift */; };
@@ -133,7 +136,9 @@
 		A2A5E3E81AF65E2700EC44A2 /* PBKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PBKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2A5E3EE1AF65E2700EC44A2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2A5E4151AF661EB00EC44A2 /* PBLogger.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PBLogger.h; sourceTree = "<group>"; };
-		A2AEB79A1E24A6CD0055FD56 /* PBUtility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBUtility.swift; sourceTree = "<group>"; };
+		A2ABFB711EEB5EAD00BF4B34 /* PBHex.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBHex.swift; sourceTree = "<group>"; };
+		A2ABFB741EEB62A400BF4B34 /* PBHexTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBHexTest.swift; sourceTree = "<group>"; };
+		A2AEB79A1E24A6CD0055FD56 /* PBDSP.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBDSP.swift; sourceTree = "<group>"; };
 		A2B80A781E2BAAEF0050B29B /* PBSession.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PBSession.swift; sourceTree = "<group>"; };
 		A2BA4DD01E23AA23002BD691 /* NSString+PBUtils_Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSString+PBUtils_Tests.swift"; sourceTree = "<group>"; };
 		A2BA4DD31E23AA86002BD691 /* String+PBUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+PBUtils.swift"; sourceTree = "<group>"; };
@@ -224,10 +229,12 @@
 				A23755531E3349020070A827 /* Float+PBMath.swift */,
 				A2A5E3E11AF65E2700EC44A2 /* Info.plist */,
 				A22F35C21E22303700DA8990 /* NSMutableData+PBExtension.swift */,
+				A27D9C0F1EBDDCFC0068340F /* PBAssert.swift */,
 				A26977371E9867F400365188 /* PBByteFormatter.swift */,
 				A22F35BF1E22303700DA8990 /* PBCookieStorage.swift */,
 				A22F35C11E22303700DA8990 /* PBEnumCount.swift */,
 				A27D9C091EBDD3720068340F /* PBGeometry.swift */,
+				A2ABFB711EEB5EAD00BF4B34 /* PBHex.swift */,
 				A25A8E8D1E29C51F005337C6 /* PBJSONParser.swift */,
 				A2A5E3E21AF65E2700EC44A2 /* PBKit.h */,
 				A2A5E4151AF661EB00EC44A2 /* PBLogger.h */,
@@ -237,12 +244,11 @@
 				A22F35C31E22303700DA8990 /* PBPlatform.swift */,
 				A25A8E8E1E29C51F005337C6 /* PBResult.swift */,
 				A2B80A781E2BAAEF0050B29B /* PBSession.swift */,
-				A2AEB79A1E24A6CD0055FD56 /* PBUtility.swift */,
+				A2AEB79A1E24A6CD0055FD56 /* PBDSP.swift */,
 				A25ED5821E237463005C0F62 /* String+PBURLSafeBase64.swift */,
 				A2BA4DD31E23AA86002BD691 /* String+PBUtils.swift */,
 				A22F35C51E22303700DA8990 /* UIColor+PBExtension.swift */,
 				A22F35C41E22303700DA8990 /* UIImage+PBExtension.swift */,
-				A27D9C0F1EBDDCFC0068340F /* PBAssert.swift */,
 			);
 			path = PBKit;
 			sourceTree = "<group>";
@@ -260,6 +266,7 @@
 				A252A2BC1E3633A300D568E8 /* PBResultTests.swift */,
 				A23755561E3349EB0070A827 /* Float+PBMathTest.swift */,
 				A269773C1E9868BC00365188 /* PBByteFormatterTests.swift */,
+				A2ABFB741EEB62A400BF4B34 /* PBHexTest.swift */,
 			);
 			path = PBKitTests;
 			sourceTree = "<group>";
@@ -385,6 +392,7 @@
 					};
 					A2A5E3E71AF65E2700EC44A2 = {
 						CreatedOnToolsVersion = 6.3.1;
+						DevelopmentTeam = WAXDS76BRK;
 						LastSwiftMigration = 0820;
 					};
 				};
@@ -458,11 +466,12 @@
 				A25A8E9A1E29C728005337C6 /* PBResult.swift in Sources */,
 				A27D9C111EBDDCFC0068340F /* PBAssert.swift in Sources */,
 				A25A8E9C1E29C728005337C6 /* UIColor+PBExtension.swift in Sources */,
+				A2ABFB731EEB5EAD00BF4B34 /* PBHex.swift in Sources */,
 				A25A8E9D1E29C728005337C6 /* UIImage+PBExtension.swift in Sources */,
 				A2BA4DD51E23AA86002BD691 /* String+PBUtils.swift in Sources */,
 				A22F35D31E22390500DA8990 /* DateFormatter+PBExtension.swift in Sources */,
 				CB0157EF1E913A12003EA730 /* PBLogger.m in Sources */,
-				A2AEB79C1E24A6CD0055FD56 /* PBUtility.swift in Sources */,
+				A2AEB79C1E24A6CD0055FD56 /* PBDSP.swift in Sources */,
 				A22F35D01E2230FF00DA8990 /* AudioStreamBasicDescription+PBExtension.swift in Sources */,
 				A27D9C0E1EBDDC1E0068340F /* PBPath.swift in Sources */,
 				A25ED5841E237463005C0F62 /* String+PBURLSafeBase64.swift in Sources */,
@@ -498,11 +507,12 @@
 				A22F35C81E22303700DA8990 /* Date+PBExtension.swift in Sources */,
 				A22F35CA1E22303700DA8990 /* NSMutableData+PBExtension.swift in Sources */,
 				A25C7C8D1CA9726900005438 /* PBLogger.swift in Sources */,
-				A2AEB79B1E24A6CD0055FD56 /* PBUtility.swift in Sources */,
+				A2AEB79B1E24A6CD0055FD56 /* PBDSP.swift in Sources */,
 				A2B80A791E2BAAEF0050B29B /* PBSession.swift in Sources */,
 				A23755541E3349020070A827 /* Float+PBMath.swift in Sources */,
 				A27D9C101EBDDCFC0068340F /* PBAssert.swift in Sources */,
 				A22F35C71E22303700DA8990 /* PBCookieStorage.swift in Sources */,
+				A2ABFB721EEB5EAD00BF4B34 /* PBHex.swift in Sources */,
 				A2BA4DD41E23AA86002BD691 /* String+PBUtils.swift in Sources */,
 				A22F35CD1E22303700DA8990 /* UIColor+PBExtension.swift in Sources */,
 				A25A8E901E29C51F005337C6 /* PBResult.swift in Sources */,
@@ -527,6 +537,7 @@
 				A2863C151E2361A400DFC58B /* NSString+PBBase64_Tests.swift in Sources */,
 				A283EB901E1FE6A000CE79A6 /* PBLoggerTest.swift in Sources */,
 				A254C6F41E485D3900F10CB5 /* PBJSONParserTest.swift in Sources */,
+				A2ABFB751EEB62A400BF4B34 /* PBHexTest.swift in Sources */,
 				A22F35D51E2244F800DA8990 /* PBKitTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -788,6 +799,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = WAXDS76BRK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -810,6 +822,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
+				DEVELOPMENT_TEAM = WAXDS76BRK;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",

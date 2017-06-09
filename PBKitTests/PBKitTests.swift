@@ -8,6 +8,7 @@
 
 import XCTest
 #if os(iOS)
+@testable import PBKit
 #else
 import PBKit_macOS
 #endif
@@ -26,7 +27,7 @@ class PBKitTestsSwift: XCTestCase {
         let str:String = DateFormatter.standard.string(from: Date())
         NSLog("\(str)")
         
-        let dt = Date(standardDateString:"2016-02-01T01:00:00.000+0900")
+        guard let dt = Date(standardDateString:"2016-02-01T01:00:00.000+0900") else { return XCTFail() }
         NSLog("\(dt)");
     }
     

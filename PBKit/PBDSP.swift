@@ -1,5 +1,5 @@
 //
-//  PBUtility.swift
+//  PBDSP.swift
 //  PBKit
 //
 //  Created by pebble8888 on 2017/01/10.
@@ -8,14 +8,6 @@
 
 import Foundation
 import Accelerate
-
-extension Int32
-{
-    func hexDescription() -> String
-    {
-        return String(format:"0x%x", self)
-    }
-}
 
 extension UnsafeMutablePointer where Pointee == Float
 {
