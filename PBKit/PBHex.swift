@@ -81,4 +81,15 @@ extension String {
         return data
     }
     
+    public func toUnicodeScalar() -> UnicodeScalar? {
+        var u:UnicodeScalar?
+        let regex = try! NSRegularExpression(pattern: "[0-9a-f]{1,}", options: .caseInsensitive)
+        regex.enumerateMatches(in: self, range: NSMakeRange(0, self.utf8.count)){ match, flags, stop in
+            let byteString = (self as NSString).substring(with: match!.range)
+            let num = UInt32(byteString, radix: 16)!
+            u = UnicodeScalar(num)
+        }
+        return u
+    }
+    
 }
