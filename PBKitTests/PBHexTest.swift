@@ -21,15 +21,25 @@ class PBHexTest: XCTestCase {
         super.tearDown()
     }
     
-    func test1() {
-        let v:[UInt8] = [10,11,12]
-        XCTAssertEqual(v.hexDescription(), "0a0b0c")
-    }
-    
     func testData() {
         let s = "abc"
         guard let d = s.data(using: .utf8) else { return XCTFail() }
         XCTAssertEqual(d.hexDescription(), "616263")
+    }
+    
+    func test2() {
+        let a:UInt8 = 10
+        XCTAssertEqual(a.hexDescription(), "0a")
+        
+        let b:Int32 = 10
+        XCTAssertEqual(b.hexDescription(), "0000000a")
+        
+        let v:[UInt8] = [10,11,12]
+        XCTAssertEqual(v.hexDescription(), "0a0b0c")
+        
+        let data:Data = Data(bytes:[11, 12, 13])
+        XCTAssertEqual(data.hexDescription(), "0b0c0d")
+        
     }
     
     
