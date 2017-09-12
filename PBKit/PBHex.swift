@@ -58,7 +58,7 @@ extension Array where Element == UInt8 {
     }
 }
 
-extension Data {
+extension Data : HexRepresentable {
     public func hexDescription() -> String {
         return self.map({ String(format:"%02x", $0) }).joined() 
     }
