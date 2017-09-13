@@ -58,8 +58,8 @@ public class PBJSONParser {
             var head:String?
             var tail:String?
             if s.utf8.count > 0 {
-                head = s.substring(to: s.index(s.startIndex, offsetBy:1))
-                tail = s.substring(from: s.index(s.endIndex, offsetBy:-1))
+                head = String(s[s.startIndex])
+                tail = String(s[s.index(s.endIndex, offsetBy:-1)])
                 if head == "{" || head == "(" || tail == "{" || tail == "(" {
                     sum += (PBJSONParser.tab(level:level) + s) + "\n"
                     level += 1

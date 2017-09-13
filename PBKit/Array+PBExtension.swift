@@ -10,7 +10,7 @@ import Foundation
 public extension Array {
     mutating func swapElement(_ index1:Int, _ index2:Int){
         if index1 < self.count && index2 < self.count {
-            swap(&self[index1], &self[index2])
+            self.swapAt(index1, index2)
         }
     }
 }

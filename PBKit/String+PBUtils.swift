@@ -14,6 +14,6 @@ extension String {
         guard let r_atmark:Range = self.range(of: "@") else {
             return ""
         }
-        return self.substring(to: r_atmark.lowerBound)
+        return String(self[..<r_atmark.lowerBound])
     }
 }
