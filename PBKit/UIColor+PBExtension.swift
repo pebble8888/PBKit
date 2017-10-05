@@ -10,7 +10,7 @@ import Foundation
 import UIKit
     
 public extension UIColor {
-    convenience init(hexString:String, alpha:CGFloat) {
+    @objc convenience init(hexString:String, alpha:CGFloat) {
         let scanner = Scanner(string:hexString)
         var color:UInt32 = 0
         if !scanner.scanHexInt32(&color) {
@@ -23,7 +23,7 @@ public extension UIColor {
         self.init(red:r, green:g, blue:b, alpha:alpha)
     }
     
-    convenience init(intRed:Int, intGreen:Int, intBlue:Int, intAlpha:Int = 255) {
+    @objc convenience init(intRed:Int, intGreen:Int, intBlue:Int, intAlpha:Int = 255) {
         let r:CGFloat = CGFloat(intRed)/255.0
         let g:CGFloat = CGFloat(intGreen)/255.0
         let b:CGFloat = CGFloat(intBlue)/255.0
