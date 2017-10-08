@@ -15,7 +15,7 @@ extension AudioStreamBasicDescription {
                                 sampleRate: Double(sampleRate),
                                 channels: 1,
                                 interleaved: true)
-        self = (fmt?.streamDescription.pointee)!
+        self = fmt.streamDescription.pointee
     }
     // 16bit stereo wav
     init(stereoWAV sampleRate:UInt32){
@@ -23,6 +23,6 @@ extension AudioStreamBasicDescription {
                                 sampleRate: Double(sampleRate),
                                 channels: 2,
                                 interleaved: true)
-        self = (fmt?.streamDescription.pointee)!
+        self = fmt.streamDescription.pointee
     }
 }
