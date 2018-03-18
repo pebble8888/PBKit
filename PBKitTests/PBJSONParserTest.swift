@@ -8,8 +8,9 @@
 
 import XCTest
 #if os(iOS)
+    @testable import PBKit
 #else
-import PBKit_macOS
+    @testable import PBKit_macOS
 #endif
 
 class PBJSONParserTest: XCTestCase {

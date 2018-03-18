@@ -8,6 +8,7 @@
 
 import XCTest
 #if os(iOS)
+@testable import PBKit
 #else
 @testable import PBKit_macOS
 #endif

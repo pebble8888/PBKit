@@ -27,10 +27,17 @@ extension Int32 : HexRepresentable
     }
 }
 
+extension UInt32 : HexRepresentable
+{
+    public func hexDescription() -> String {
+        return String(format:"%08x", self)
+    }
+}
+
 extension String {
     public func unhexlify() -> [UInt8] {
         var pos = startIndex
-        return (0..<characters.count/2).flatMap { _ in
+        return (0..<self.count/2).flatMap { _ in
             defer { pos = index(pos, offsetBy: 2) }
             return UInt8(self[pos...index(after: pos)], radix: 16)
         }
@@ -67,7 +74,7 @@ extension Data : HexRepresentable {
 extension String {
     // hex string to data
     public func hexData() -> Data? {
-        var data = Data(capacity: characters.count / 2)
+        var data = Data(capacity: self.count / 2)
         
         let regex = try! NSRegularExpression(pattern: "[0-9a-f]{1,2}", options: .caseInsensitive)
         regex.enumerateMatches(in: self, range: NSMakeRange(0, utf16.count)) { match, flags, stop in

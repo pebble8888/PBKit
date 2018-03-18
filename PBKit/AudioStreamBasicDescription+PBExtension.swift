@@ -10,19 +10,35 @@ import AVFoundation
 
 extension AudioStreamBasicDescription {
     // 16bit mono wav
-    init(monoWAV sampleRate:UInt32){
-        let fmt = AVAudioFormat(commonFormat: AVAudioCommonFormat.pcmFormatInt16,
-                                sampleRate: Double(sampleRate),
-                                channels: 1,
-                                interleaved: true)
-        self = fmt.streamDescription.pointee
+    init?(monoWAV sampleRate:UInt32){
+        #if os(iOS)
+            guard let fmt = AVAudioFormat(commonFormat: AVAudioCommonFormat.pcmFormatInt16,
+                                    sampleRate: Double(sampleRate),
+                                    channels: 1,
+                                    interleaved: true) else { return nil }
+            self = fmt.streamDescription.pointee
+        #else
+            let fmt = AVAudioFormat(commonFormat: AVAudioCommonFormat.pcmFormatInt16,
+                                    sampleRate: Double(sampleRate),
+                                    channels: 1,
+                                    interleaved: true)
+            self = fmt.streamDescription.pointee
+        #endif
     }
     // 16bit stereo wav
-    init(stereoWAV sampleRate:UInt32){
-        let fmt = AVAudioFormat(commonFormat: AVAudioCommonFormat.pcmFormatInt16,
-                                sampleRate: Double(sampleRate),
-                                channels: 2,
-                                interleaved: true)
-        self = fmt.streamDescription.pointee
+    init?(stereoWAV sampleRate:UInt32){
+        #if os(iOS)
+            guard let fmt = AVAudioFormat(commonFormat: AVAudioCommonFormat.pcmFormatInt16,
+                                    sampleRate: Double(sampleRate),
+                                    channels: 2,
+                                    interleaved: true) else { return nil }
+            self = fmt.streamDescription.pointee
+        #else
+            let fmt = AVAudioFormat(commonFormat: AVAudioCommonFormat.pcmFormatInt16,
+                                    sampleRate: Double(sampleRate),
+                                    channels: 2,
+                                    interleaved: true)
+            self = fmt.streamDescription.pointee
+        #endif
     }
 }
