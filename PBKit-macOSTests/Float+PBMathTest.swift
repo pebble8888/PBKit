@@ -107,6 +107,6 @@ class Float_PBMathTest: XCTestCase {
         a[3] = 44
         let val:Float = a.maxMagnitude(count: 4)
         XCTAssertEqual(val, 222)
-        a.deallocate(capacity:4)
+        a.deallocate()
     }
 }
