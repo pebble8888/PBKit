@@ -47,7 +47,7 @@ public func / (v:CGVector, f:CGFloat) -> CGVector {
 }
 
 public extension CGRect {
-    public func center() -> CGPoint {
+    func center() -> CGPoint {
         return CGPoint(x:self.midX, y:self.midY)
     }
 }
