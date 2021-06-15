@@ -37,7 +37,7 @@ class PBHexTest: XCTestCase {
         let v:[UInt8] = [10,11,12]
         XCTAssertEqual(v.hexDescription(), "0a0b0c")
         
-        let data:Data = Data(bytes:[11, 12, 13])
+        let data:Data = Data([11, 12, 13])
         XCTAssertEqual(data.hexDescription(), "0b0c0d")
         
     }

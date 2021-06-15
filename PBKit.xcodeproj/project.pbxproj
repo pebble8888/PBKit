@@ -399,11 +399,11 @@
 			};
 			buildConfigurationList = A2A5E3D71AF65E2700EC44A2 /* Build configuration list for PBXProject "PBKit" */;
 			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
+			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				English,
 				en,
+				Base,
 			);
 			mainGroup = A2A5E3D31AF65E2700EC44A2;
 			productRefGroup = A2A5E3DE1AF65E2700EC44A2 /* Products */;
