@@ -8,8 +8,8 @@
 
 import XCTest
 
-class NSString_PBUtils_Tests: XCTestCase {
-    
+class NSStringPBUtilsTests: XCTestCase {
+
     override func setUp() {
         super.setUp()
     }
@@ -17,9 +17,9 @@ class NSString_PBUtils_Tests: XCTestCase {
     override func tearDown() {
         super.tearDown()
     }
-    
+
     func testExample1() {
-        let str:String = "hoge@gmail.com".deletedTrailingAtMark()
+        let str: String = "hoge@gmail.com".deletedTrailingAtMark()
         XCTAssertEqual(str, "hoge")
     }
     

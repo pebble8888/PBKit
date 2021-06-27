@@ -8,7 +8,7 @@
 import Foundation
 
 public extension Array {
-    mutating func swapElement(_ index1:Int, _ index2:Int){
+    mutating func swapElement(_ index1: Int, _ index2: Int) {
         if index1 < self.count && index2 < self.count {
             self.swapAt(index1, index2)
         }
@@ -16,11 +16,11 @@ public extension Array {
 }
 
 public protocol ComparableIndex {
-    static func LessIndex(_ lhs: Self, _ rhs: Self) -> Bool
+    static func lessIndex(_ lhs: Self, _ rhs: Self) -> Bool
 }
 
-public extension Array where Element : ComparableIndex {
+public extension Array where Element: ComparableIndex {
     mutating func sortWithIndex() {
-        self.sort(by: { (a, b) in Element.LessIndex(a, b) })
+        self.sort(by: { (a, b) in Element.lessIndex(a, b) })
     }
 }

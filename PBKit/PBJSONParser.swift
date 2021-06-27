@@ -35,7 +35,7 @@ public class PBJSONParser {
     /**
      @brief  JSON Foundation Object to data
      */
-    public static func buildData(jsonObject:Any) throws -> Data { 
+    public static func buildData(jsonObject: Any) throws -> Data {
         guard JSONSerialization.isValidJSONObject(jsonObject) else {
             throw NSError(domain: NSCocoaErrorDomain, code: 3840, userInfo: nil)
         }
@@ -45,60 +45,56 @@ public class PBJSONParser {
     /**
      @brief
      */
-    public static func debugDescriptionJP(_ jsonObject:Any) -> String
-    {
-        guard let dic = jsonObject as? [String:Any] else {
+    public static func debugDescriptionJP(_ jsonObject: Any) -> String {
+        guard let dic = jsonObject as? [String: Any] else {
             return "is not jsonObject"
         }
-        let ss:[String] = PBJSONParser.debugDescriptionJP(dic: dic, s:[])
-        var level:Int = 0
+        let ss: [String] = PBJSONParser.debugDescriptionJP(dic: dic, s: [])
+        var level: Int = 0
         var sum = ""
         for s in ss {
-            var done:Bool = false
-            var head:String?
-            var tail:String?
+            var done: Bool = false
+            var head: String?
+            var tail: String?
             if s.utf8.count > 0 {
                 head = String(s[s.startIndex])
-                tail = String(s[s.index(s.endIndex, offsetBy:-1)])
+                tail = String(s[s.index(s.endIndex, offsetBy: -1)])
                 if head == "{" || head == "(" || tail == "{" || tail == "(" {
-                    sum += (PBJSONParser.tab(level:level) + s) + "\n"
+                    sum += (PBJSONParser.tab(level: level) + s) + "\n"
                     level += 1
                     done = true
                 } else if head == "}" || head == ")" || tail == "}" || tail == ")" {
                     level -= 1
-                    sum += (PBJSONParser.tab(level:level) + s) + "\n"
+                    sum += (PBJSONParser.tab(level: level) + s) + "\n"
                     done = true
                 }
             }
             if !done {
-                sum += (PBJSONParser.tab(level:level) + s) + "\n"
+                sum += (PBJSONParser.tab(level: level) + s) + "\n"
             }
         }
         return sum
     }
     
-    private static func debugDescriptionJP(dic:[String:Any], s:[String]) -> [String]
-    {
+    private static func debugDescriptionJP(dic: [String: Any], s: [String]) -> [String] {
         var t = s
         for (k, v) in dic {
-            if let a = v as? [String:Any] {
-                let b:[String] = debugDescriptionJP(dic: a, s: t)
+            if let a = v as? [String: Any] {
+                let b: [String] = debugDescriptionJP(dic: a, s: t)
                 t.append("{")
                 t.append("\(k) = {")
                 t.append(contentsOf: b)
                 t.append("};")
                 t.append("}")
-            }
-            else if let ary = v as? Array<[String:Any]> {
+            } else if let ary = v as? [[String: Any]] {
                 t.append("(")
                 for vd in ary {
-                    let b:[String] = debugDescriptionJP(dic: vd, s: t)
+                    let b: [String] = debugDescriptionJP(dic: vd, s: t)
                     t.append(contentsOf: b)
                     t.append(";")
                 }
                 t.append(")")
-            }
-            else if let ary = v as? Array<String> {
+            } else if let ary = v as? [String] {
                 t.append("{")
                 t.append("\(k) = (")
                 for vd in ary {
@@ -106,19 +102,16 @@ public class PBJSONParser {
                 }
                 t.append(");")
                 t.append("}")
-            }
-            else if let v = v as? String {
+            } else if let v = v as? String {
                 t.append("\(k) = \"\(v)\";")
-            }
-            else {
+            } else {
                 t.append("\(k) = \(v);")
             }
         }
         return t
     }
-    
-    private static func tab(level:Int) -> String
-    {
+
+    private static func tab(level: Int) -> String {
         assert(level >= 0)
         var sum = ""
         for _ in 0..<level {
@@ -126,5 +119,4 @@ public class PBJSONParser {
         }
         return sum
     }
-    
 }

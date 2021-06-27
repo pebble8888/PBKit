@@ -9,27 +9,26 @@
 import Foundation
 
 public struct PBSession {
-    private let baseURL:String
-    
-    public init(baseURL:String){
+    private let baseURL: String
+
+    public init(baseURL: String) {
         self.baseURL = baseURL
     }
-    
-    public func buildRequest(_ path:String, method: String) -> NSMutableURLRequest {
-        let mPath:String = path.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
+
+    public func buildRequest(_ path: String, method: String) -> NSMutableURLRequest {
+        let mPath: String = path.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)!
         let requestURL = URL(string: "\(baseURL)/\(mPath)")
         let request = NSMutableURLRequest(url: requestURL!)
         request.httpMethod = method
         request.addValue("application/json", forHTTPHeaderField: "Content-Type")
         return request
     }
-    
-    public func sendRequest(_ request: NSMutableURLRequest, completion:@escaping (PBResult) -> Void) -> () {
+
+    public func sendRequest(_ request: NSMutableURLRequest, completion:@escaping (PBResult) -> Void) {
         let session = URLSession.shared
-        let req:URLRequest = request as URLRequest
-        let task = session.dataTask(with: req, completionHandler:
-            { (data: Data?, response: URLResponse?, error: Error?) in
-            let result:PBResult = PBResult(data:data, response:response, error:error)
+        let req: URLRequest = request as URLRequest
+        let task = session.dataTask(with: req, completionHandler: { (data: Data?, response: URLResponse?, error: Error?) in
+            let result: PBResult = PBResult(data:data, response:response, error: error)
             DispatchQueue.main.async(execute: { completion(result) } )
         }) 
         task.resume()

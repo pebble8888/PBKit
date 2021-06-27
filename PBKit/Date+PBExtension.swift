@@ -8,7 +8,7 @@
 import Foundation
 
 public extension Date {
-    init(year:Int, month:Int, day:Int) {
+    init(year: Int, month: Int, day: Int) {
         let calendar:Calendar = Calendar.current
         var components:DateComponents = DateComponents()
         components.year = year
@@ -17,21 +17,17 @@ public extension Date {
         let d = calendar.date(from: components)!
         self.init(timeInterval:0, since:d)
     }
-    var year:Int {
-        get {
-            let calendar = Calendar.current
-            let comp : DateComponents = (calendar as NSCalendar).components(
-                NSCalendar.Unit.year, from: self)
-            return comp.year!
-        }
+    var year: Int {
+        let calendar = Calendar.current
+        let comp: DateComponents = (calendar as NSCalendar).components(
+            NSCalendar.Unit.year, from: self)
+        return comp.year!
     }
 
     var month:Int {
-        get {
-            let calendar = Calendar.current
-            let comp : DateComponents = (calendar as NSCalendar).components(
-                NSCalendar.Unit.month, from: self)
-            return comp.month!
-        }
+        let calendar = Calendar.current
+        let comp: DateComponents = (calendar as NSCalendar).components(
+            NSCalendar.Unit.month, from: self)
+        return comp.month!
     }
 }

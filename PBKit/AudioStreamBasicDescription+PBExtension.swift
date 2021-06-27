@@ -10,7 +10,7 @@ import AVFoundation
 
 extension AudioStreamBasicDescription {
     // 16bit mono wav
-    init?(monoWAV sampleRate:UInt32){
+    init?(monoWAV sampleRate: UInt32){
         #if os(iOS)
             guard let fmt = AVAudioFormat(commonFormat: AVAudioCommonFormat.pcmFormatInt16,
                                     sampleRate: Double(sampleRate),
@@ -26,7 +26,7 @@ extension AudioStreamBasicDescription {
         #endif
     }
     // 16bit stereo wav
-    init?(stereoWAV sampleRate:UInt32){
+    init?(stereoWAV sampleRate: UInt32) {
         #if os(iOS)
             guard let fmt = AVAudioFormat(commonFormat: AVAudioCommonFormat.pcmFormatInt16,
                                     sampleRate: Double(sampleRate),

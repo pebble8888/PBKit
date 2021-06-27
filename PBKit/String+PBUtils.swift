@@ -11,9 +11,9 @@ import Foundation
 // "foo@gmail.com" -> "foo"
 extension String {
     public func deletedTrailingAtMark() -> String {
-        guard let r_atmark:Range = self.range(of: "@") else {
+        guard let atmark: Range = self.range(of: "@") else {
             return ""
         }
-        return String(self[..<r_atmark.lowerBound])
+        return String(self[..<atmark.lowerBound])
     }
 }

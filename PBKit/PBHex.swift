@@ -12,25 +12,21 @@ public protocol HexRepresentable {
     func hexDescription() -> String
 }
 
-extension UInt8 : HexRepresentable
-{
+extension UInt8 : HexRepresentable {
     public func hexDescription() -> String {
-        return String(format:"%02x", self)
+        return String(format: "%02x", self)
     }
 }
 
-extension Int32 : HexRepresentable
-{
-    public func hexDescription() -> String
-    {
-        return String(format:"%08x", self)
+extension Int32 : HexRepresentable {
+    public func hexDescription() -> String {
+        return String(format: "%08x", self)
     }
 }
 
-extension UInt32 : HexRepresentable
-{
+extension UInt32 : HexRepresentable {
     public func hexDescription() -> String {
-        return String(format:"%08x", self)
+        return String(format: "%08x", self)
     }
 }
 
@@ -44,7 +40,7 @@ extension String {
     }
 }
 
-extension Collection where Iterator.Element : HexRepresentable {
+extension Collection where Iterator.Element: HexRepresentable {
     public func hexDescription() -> String {
         return self.map({ $0.hexDescription() }).joined()
     }
@@ -65,9 +61,9 @@ extension Array where Element == UInt8 {
     }
 }
 
-extension Data : HexRepresentable {
+extension Data: HexRepresentable {
     public func hexDescription() -> String {
-        return self.map({ String(format:"%02x", $0) }).joined() 
+        return self.map({ String(format: "%02x", $0) }).joined()
     }
 }
 
@@ -75,31 +71,40 @@ extension String {
     // hex string to data
     public func hexData() -> Data? {
         var data = Data(capacity: self.count / 2)
-        
-        let regex = try! NSRegularExpression(pattern: "[0-9a-f]{1,2}", options: .caseInsensitive)
-        regex.enumerateMatches(in: self, range: NSMakeRange(0, utf16.count)) { match, flags, stop in
+
+        guard let regex = try? NSRegularExpression(pattern: "[0-9a-f]{1,2}", options: .caseInsensitive) else {
+            return nil
+        }
+
+        regex.enumerateMatches(in: self, range: NSMakeRange(0, utf16.count)) { match, _, _ in
             let byteString = (self as NSString).substring(with: match!.range)
             var num = UInt8(byteString, radix: 16)!
             data.append(&num, count: 1)
         }
-        
+
         guard data.count > 0 else { return nil }
-        
+
         return data
     }
-    
+
     public func toUnicodeScalar(_ hexOrDec: Bool = true) -> UnicodeScalar? {
-        var u:UnicodeScalar?
+        var u: UnicodeScalar?
         if hexOrDec {
-            let regex = try! NSRegularExpression(pattern: "[0-9a-f]{1,}", options: .caseInsensitive)
-            regex.enumerateMatches(in: self, range: NSMakeRange(0, self.utf8.count)){ match, flags, stop in
+            guard let regex = try? NSRegularExpression(pattern: "[0-9a-f]{1,}", options: .caseInsensitive) else {
+                return nil
+            }
+
+            regex.enumerateMatches(in: self, range: NSMakeRange(0, self.utf8.count)) { match, _, _ in
                 let byteString = (self as NSString).substring(with: match!.range)
                 let num = UInt32(byteString, radix: 16)!
                 u = UnicodeScalar(num)
             }
         } else {
-            let regex = try! NSRegularExpression(pattern: "[0-9]{1,}", options: .caseInsensitive)
-            regex.enumerateMatches(in: self, range: NSMakeRange(0, self.utf8.count)){ match, flags, stop in
+            guard let regex = try? NSRegularExpression(pattern: "[0-9]{1,}", options: .caseInsensitive) else {
+                return nil
+            }
+
+            regex.enumerateMatches(in: self, range: NSMakeRange(0, self.utf8.count)) { match, _, _ in
                 let byteString = (self as NSString).substring(with: match!.range)
                 let num = UInt32(byteString, radix: 10)!
                 u = UnicodeScalar(num)
@@ -107,5 +112,4 @@ extension String {
         }
         return u
     }
-    
 }

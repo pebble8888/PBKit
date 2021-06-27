@@ -14,20 +14,20 @@ import XCTest
 #endif
 
 class PBResultTests: XCTestCase {
-    
+
     override func setUp() {
         super.setUp()
     }
-    
+
     override func tearDown() {
         super.tearDown()
     }
-    var pbsession:PBSession = PBSession(baseURL: "https://jsonplaceholder.typicode.com")
-    
+    var pbsession: PBSession = PBSession(baseURL: "https://jsonplaceholder.typicode.com")
+
     func testSuccess() {
         let expectation = self.expectation(description: "")
-        let req = pbsession.buildRequest("posts/1", method:"GET")
-        pbsession.sendRequest(req, completion: { (result:PBResult) -> Void in
+        let req = pbsession.buildRequest("posts/1", method: "GET")
+        pbsession.sendRequest(req, completion: { (result: PBResult) -> Void in
             XCTAssert(result.isSuccess)
             print("\(result)")
             expectation.fulfill()
@@ -36,9 +36,9 @@ class PBResultTests: XCTestCase {
     }
     func test404() {
         let expectation = self.expectation(description: "")
-        let req = pbsession.buildRequest("hoge", method:"GET")
-        pbsession.sendRequest(req, completion: { (result:PBResult) -> Void in
-            if let pberror:PBError = result.error as? PBError {
+        let req = pbsession.buildRequest("hoge", method: "GET")
+        pbsession.sendRequest(req, completion: { (result: PBResult) -> Void in
+            if let pberror: PBError = result.error as? PBError {
                 switch pberror {
                 case .httpResponseError(let statusCode, _):
                     XCTAssert(statusCode == 404)
@@ -48,13 +48,10 @@ class PBResultTests: XCTestCase {
                     break
                 }
             }
-               
-            XCTFail()
+
+            XCTFail("")
             expectation.fulfill()
         })
         waitForExpectations(timeout: 2.0, handler: nil)
     }
-    
-    
 }
-

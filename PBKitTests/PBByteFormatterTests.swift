@@ -14,11 +14,11 @@ import XCTest
 #endif 
 
 class PBByteFormatterTests: XCTestCase {
-    
+
     override func setUp() {
         super.setUp()
     }
-    
+
     override func tearDown() {
         super.tearDown()
     }
@@ -57,17 +57,17 @@ class PBByteFormatterTests: XCTestCase {
         XCTAssertEqual(Int64(10_345_678_912).byteCountRepresentation, "10.35 GB")
         XCTAssertEqual(Int64(12_045_678_912).byteCountRepresentation, "12.05 GB")
          */
-        
+
         XCTAssertEqual(Int64(0).byteCountRepresentation, "0 B")
-        
+
         XCTAssertEqual(Int64(1).byteCountRepresentation, "1 KB")
         XCTAssertEqual(Int64(12).byteCountRepresentation, "1 KB")
         XCTAssertEqual(Int64(123).byteCountRepresentation, "1 KB")
-        
+
         XCTAssertEqual(Int64(1_234).byteCountRepresentation, "1 KB")
         XCTAssertEqual(Int64(12_345).byteCountRepresentation, "12 KB")
         XCTAssertEqual(Int64(123_456).byteCountRepresentation, "123 KB")
-        
+
         XCTAssertEqual(Int64(1_234_567).byteCountRepresentation, "1 MB")
         XCTAssertEqual(Int64(12_345_678).byteCountRepresentation, "12 MB")
         XCTAssertEqual(Int64(123_456_789).byteCountRepresentation, "123 MB")
@@ -76,11 +76,11 @@ class PBByteFormatterTests: XCTestCase {
         XCTAssertEqual(Int64(1_034_567_891).byteCountRepresentation, "1.03 GB")
         XCTAssertEqual(Int64(1_204_567_891).byteCountRepresentation, "1.20 GB")
         XCTAssertEqual(Int64(1_230_567_891).byteCountRepresentation, "1.23 GB")
-        
+
         XCTAssertEqual(Int64(12_345_678_912).byteCountRepresentation, "12.3 GB")
         XCTAssertEqual(Int64(10_345_678_912).byteCountRepresentation, "10.3 GB")
         XCTAssertEqual(Int64(12_045_678_912).byteCountRepresentation, "12.0 GB")
-        
+
         XCTAssertEqual(Int64(123_456_789_012).byteCountRepresentation, "123 GB")
     }
 }

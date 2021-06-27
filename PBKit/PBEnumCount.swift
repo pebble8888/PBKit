@@ -12,10 +12,8 @@ public protocol PBEnumCountable
     static func countEnum() -> Int
 }
 
-public extension PBEnumCountable where Self : RawRepresentable, Self.RawValue == Int
-{
-    static func countEnum() -> Int
-    {
+public extension PBEnumCountable where Self : RawRepresentable, Self.RawValue == Int {
+    static func countEnum() -> Int {
         var count = 0
         while let _ = Self(rawValue: count) {
             count += 1

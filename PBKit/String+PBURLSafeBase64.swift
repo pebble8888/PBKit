@@ -25,11 +25,11 @@ extension String {
     public func base64UrlSafe() -> String {
         let input = self.utf8
         let length = input.count
-        var data:Data = Data()
+        var data: Data = Data()
         // process by 3 bytes(24bit=6bit*3)
         for i in stride(from:0, to: length, by: 3) {
             var value:Int = 0
-            for j in stride(from:i, to: i+3, by: 1) {
+            for j in stride(from: i, to: i+3, by: 1) {
                 value <<= 8
                 if j < length {
                     value |= (0xFF & Int(input[input.index(input.startIndex, offsetBy: j)]))
@@ -41,12 +41,12 @@ extension String {
             data.append((i + 1) < length ? String.table[(value >> 6)  & 0x3F] : "=".utf8.first!)
             data.append((i + 2) < length ? String.table[(value >> 0)  & 0x3F] : "=".utf8.first!)
         }
-        guard let ret_str = String(data: data, encoding:.utf8) else { 
+        guard let retStr = String(data: data, encoding: .utf8) else {
             return ""
         }
-        return ret_str
+        return retStr
     }
-    
+
     public func base64() -> String {
         return Data(self.utf8).base64EncodedString()
     }
@@ -56,6 +56,6 @@ extension String {
      */
     public func base64UrlSafeNoEqual() -> String {
         let str = self.base64UrlSafe()
-        return str.replacingOccurrences(of:"=", with:"")
+        return str.replacingOccurrences(of: "=", with: "")
     }
 }

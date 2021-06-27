@@ -13,34 +13,33 @@ extension DateFormatter {
      */
     public static let standard: DateFormatter = {
         let obj = DateFormatter()
-        obj.locale = Locale(identifier:"en_US_POSIX")
+        obj.locale = Locale(identifier: "en_US_POSIX")
         obj.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss'.000'Z"
-        obj.timeZone = TimeZone(secondsFromGMT:0)
+        obj.timeZone = TimeZone(secondsFromGMT: 0)
         return obj
     }()
-    
+
     public static let simple: DateFormatter = {
         let obj = DateFormatter()
-        obj.locale = Locale(identifier:"ja_JP")
+        obj.locale = Locale(identifier: "ja_JP")
         obj.dateFormat = "yyyy-MM-dd"
-        obj.timeZone = TimeZone(secondsFromGMT:0)
+        obj.timeZone = TimeZone(secondsFromGMT: 0)
         return obj
     }()
-    
 }
 
 extension Date {
-    public init?(standardDateString:String){
+    public init?(standardDateString: String) {
         guard let obj = DateFormatter.standard.date(from: standardDateString) else { return nil }
         self = obj
     }
-    
-    public init?(simpleDateString:String){
+
+    public init?(simpleDateString: String) {
         guard let obj = DateFormatter.simple.date(from: simpleDateString) else { return nil }
         self = obj
     }
-    
-    public var standardRepresentation:String {
-        return DateFormatter.standard.string(from:self)
+
+    public var standardRepresentation: String {
+        return DateFormatter.standard.string(from: self)
     }
 }

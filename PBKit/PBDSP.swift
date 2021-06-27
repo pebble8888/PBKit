@@ -11,8 +11,7 @@ import Accelerate
 
 extension UnsafeMutablePointer where Pointee == Float
 {
-    func maxMagnitude(count:UInt) -> Float
-    {
+    func maxMagnitude(count:UInt) -> Float {
         var max:Float = 0
         vDSP_maxmgv(self, 1, &max, count)
         return max

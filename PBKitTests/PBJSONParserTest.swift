@@ -30,8 +30,8 @@ class PBJSONParserTest: XCTestCase {
             let b = try JSONSerialization.jsonObject(with: a, options: [])
             print("\(b)")
             print("\(PBJSONParser.debugDescriptionJP(b))")
-            
-            let c = try JSONSerialization.data(withJSONObject: ["alpha":["さしす", "せそた"]], options: [])
+
+            let c = try JSONSerialization.data(withJSONObject: ["alpha": ["さしす", "せそた"]], options: [])
             print("\(c)")
             let d = try JSONSerialization.jsonObject(with: c, options: [])
             print("\(d)")
@@ -40,6 +40,4 @@ class PBJSONParserTest: XCTestCase {
             XCTFail()
         }
     }
-    
-    
 }

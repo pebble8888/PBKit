@@ -8,34 +8,34 @@
 
 import CoreGraphics
 
-public func + (p1:CGPoint, p2:CGPoint) -> CGPoint {
+public func + (p1: CGPoint, p2: CGPoint) -> CGPoint {
     return CGPoint(x:p1.x + p2.x, y:p1.y + p2.y)
 }
 
-public func - (p1:CGPoint, p2:CGPoint) -> CGPoint {
+public func - (p1: CGPoint, p2: CGPoint) -> CGPoint {
     return CGPoint(x:p1.x - p2.x, y:p1.y - p2.y)
 }
 
-public func * (p:CGPoint, f:CGFloat) -> CGPoint {
+public func * (p: CGPoint, f: CGFloat) -> CGPoint {
     return CGPoint(x:p.x * f, y:p.y * f)
 }
 
-public func / (p:CGPoint, f:CGFloat) -> CGPoint {
+public func / (p: CGPoint, f: CGFloat) -> CGPoint {
     if f == 0.0 {
         return p
     }
     return p * (1.0/f)
 }
 
-public func + (p:CGPoint, v:CGVector) -> CGPoint {
+public func + (p: CGPoint, v: CGVector) -> CGPoint {
     return CGPoint(x:p.x + v.dx, y:p.y + v.dy)
 }
 
-public func - (p:CGPoint, v:CGVector) -> CGPoint {
+public func - (p: CGPoint, v: CGVector) -> CGPoint {
     return CGPoint(x:p.x - v.dx, y:p.y - v.dy)
 }
 
-public func * (v:CGVector, f:CGFloat) -> CGVector {
+public func * (v: CGVector, f: CGFloat) -> CGVector {
     return CGVector(dx:v.dx * f, dy:v.dy * f)
 }
 
@@ -48,15 +48,15 @@ public func / (v:CGVector, f:CGFloat) -> CGVector {
 
 public extension CGRect {
     func center() -> CGPoint {
-        return CGPoint(x:self.midX, y:self.midY)
+        return CGPoint(x: self.midX, y: self.midY)
     }
 }
 
-public func * (rc:CGRect, f:CGFloat) -> CGRect {
+public func * (rc: CGRect, f: CGFloat) -> CGRect {
     return CGRect(x: rc.origin.x * f, y: rc.origin.y * f, width: rc.size.width * f, height: rc.size.height * f)
 }
 
-public func / (rc:CGRect, f:CGFloat) -> CGRect {
+public func / (rc: CGRect, f: CGFloat) -> CGRect {
     if f == 0.0 {
         return rc
     }

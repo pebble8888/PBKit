@@ -7,28 +7,23 @@
 
 import Foundation
 
-protocol PBCookieStorageProtocol
-{
-    func cookiesForURL(url:URL) -> [HTTPCookie]
-    func setCookies(cookies:[HTTPCookie])
+protocol PBCookieStorageProtocol {
+    func cookiesForURL(url: URL) -> [HTTPCookie]
+    func setCookies(cookies: [HTTPCookie])
 }
 
-class PBCookieStorage : NSObject, PBCookieStorageProtocol
-{
-    public func setCookie(cookie:HTTPCookie)
-    {
+class PBCookieStorage : NSObject, PBCookieStorageProtocol {
+    public func setCookie(cookie: HTTPCookie) {
         HTTPCookieStorage.shared.setCookie(cookie)
     }
 
-    public func setCookies(cookies:[HTTPCookie])
-    {
+    public func setCookies(cookies: [HTTPCookie]) {
         for cookie in cookies {
             HTTPCookieStorage.shared.setCookie(cookie)
         }
     }
 
-    public func cookiesForURL(url:URL) -> [HTTPCookie]
-    {
+    public func cookiesForURL(url: URL) -> [HTTPCookie] {
         guard let cookies = HTTPCookieStorage.shared.cookies(for: url) else {
             return []
         }
