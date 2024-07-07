@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1200"
-   version = "1.3">
+   LastUpgradeVersion = "1600"
+   version = "1.7">
    <BuildAction
       parallelizeBuildables = "YES"
-      buildImplicitDependencies = "YES">
+      buildImplicitDependencies = "YES"
+      buildArchitectures = "Automatic">
       <BuildActionEntries>
          <BuildActionEntry
             buildForTesting = "YES"
@@ -14,23 +15,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A2A5E3DC1AF65E2700EC44A2"
-               BuildableName = "PBKit.framework"
-               BlueprintName = "PBKit"
-               ReferencedContainer = "container:PBKit.xcodeproj">
-            </BuildableReference>
-         </BuildActionEntry>
-         <BuildActionEntry
-            buildForTesting = "YES"
-            buildForRunning = "YES"
-            buildForProfiling = "NO"
-            buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A2A5E3E71AF65E2700EC44A2"
-               BuildableName = "PBKitTests.xctest"
-               BlueprintName = "PBKitTests"
+               BlueprintIdentifier = "A283EB951E1FE72B00CE79A6"
+               BuildableName = "PBKit_macOS.framework"
+               BlueprintName = "PBKit_macOS"
                ReferencedContainer = "container:PBKit.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -41,15 +28,15 @@
       selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
-      codeCoverageEnabled = "YES">
+      shouldAutocreateTestPlan = "YES">
       <Testables>
          <TestableReference
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "A2A5E3E71AF65E2700EC44A2"
-               BuildableName = "PBKitTests.xctest"
-               BlueprintName = "PBKitTests"
+               BlueprintIdentifier = "A283EB9D1E1FE72B00CE79A6"
+               BuildableName = "PBKit_macOSTests.xctest"
+               BlueprintName = "PBKit_macOSTests"
                ReferencedContainer = "container:PBKit.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -65,15 +52,6 @@
       debugDocumentVersioning = "YES"
       debugServiceExtension = "internal"
       allowLocationSimulation = "YES">
-      <MacroExpansion>
-         <BuildableReference
-            BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A2A5E3DC1AF65E2700EC44A2"
-            BuildableName = "PBKit.framework"
-            BlueprintName = "PBKit"
-            ReferencedContainer = "container:PBKit.xcodeproj">
-         </BuildableReference>
-      </MacroExpansion>
    </LaunchAction>
    <ProfileAction
       buildConfiguration = "Release"
@@ -84,9 +62,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "A2A5E3DC1AF65E2700EC44A2"
-            BuildableName = "PBKit.framework"
-            BlueprintName = "PBKit"
+            BlueprintIdentifier = "A283EB951E1FE72B00CE79A6"
+            BuildableName = "PBKit_macOS.framework"
+            BlueprintName = "PBKit_macOS"
             ReferencedContainer = "container:PBKit.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
